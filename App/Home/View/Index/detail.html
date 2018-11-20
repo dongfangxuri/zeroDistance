@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no,maximum-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/pintuer/pintuer.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/swiper.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/detail.css">
+    <style>
+        .swiper-container {
+        width: 100%;
+       /* height: 300px;*/
+        margin: 0px auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /*line-height: 300px;*/
+    }
+    .swiper-button-next, .swiper-button-prev {
+        position: absolute;
+        top: 53%;   
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+        text-align:center;
+        color: #fff;
+    }
+       .collect{
+            position: absolute;
+            width: 5rem;
+            height: 5rem;
+            top:1rem;
+            right: 0rem;
+            background: url("__PUBLIC__/fav_white.png")no-repeat;
+            z-index: 100;
+        }
+    
+    </style>
+</head>
+<body>
+<!--头部信息-->
+    <header class="layout header_box clearfix" >
+        <div class="line">
+            <a href="javascript:history.back(-1);" class="x2"><img src="__PUBLIC__/images/idex.png" alt="" class="img-responsive padding retreat"  style="width: 75%"> </a>
+            <p class="x8">
+                <img src="__PUBLIC__/images/logo.png" alt="" class="img-responsive x2  padding" style="width: 15%;padding-right: 0">
+                <img src="__PUBLIC__/images/ojltj.png" alt="" class="img-responsive x9 padding " style="width: 75%">
+            </p>
+            <a href="/Home/Min/index" class="x2">
+               <empty name="header_img">
+                   <img src="__PUBLIC__/images/fx.png" alt="" class="img-responsive padding myhome" style="width: 75% ;">
+               <else/>
+               <img src="/{$header_img}" alt="" class="img-responsive padding myhome" style="width: 75% ;border-radius:50%">
+             </empty>
+             </a>
+        </div>
+    </header>
+
+<!--主体内容-->
+    <section class="layout margin-little-top" style="overflow: auto">
+           <div class="swiper-container">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img style="width:100%" src="/{$activemodel.ac_img}" alt=""></div>
+        </div>
+        <i class="collect"></i>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+        
+
+
+
+        <!--分类-->
+        <div class="layout content_text">
+            <p class="margin-top">
+                {$activemodel.ac_title}
+            </p>
+            <h6>
+                 {$activemodel.ac_intro}
+            </h6>
+           <div class="jiaqian">
+               <sup>¥</sup><span >{$leastprice}元</span> 起 
+               <if condition="$activemodel.status eq 0">
+                  <span class="float-right ">活动报名中</span>
+                 <else/>
+                  <span class="float-right ">报名截止</span>
+               </if>
+           </div>
+        </div>
+        <ul class="detail_list">
+            <li><img src="__PUBLIC__/images/ic_child.png" alt="" class="img-responsive">适合<span>{$activemodel.fit_age}</span>岁孩子参加</li>
+            <li><img src="__PUBLIC__/images/ic_time.png" alt="" class="img-responsive"><span>{$activemodel.start_time}-{$activemodel.end_time}</span></li>
+            <li><img src="__PUBLIC__/images/ic_didian.png" alt="" class="img-responsive">{$activemodel.view_addr}</li>
+            <li><img src="__PUBLIC__/images/ic_dongtai.png" alt="" class="img-responsive">客服微信：<span>18951310488</span> 星星</li>
+            <li><img src="__PUBLIC__/images/ic_dongtai.png" alt="" class="img-responsive"><a href="tel:0513-85221106">想为孩子和小伙伴包场吗？<img src="__PUBLIC__/images/right.png" alt="" class="img-responsive float-right"></a></li>
+			<if condition="$contentcount eq 0">
+			<else/>
+			<foreach name="contentlist" item="vo1">
+			<li>
+                <img src="__PUBLIC__/images/ic_dongtai.png" alt="" class="img-responsive">{$vo1.content}
+            </li>
+			</foreach>
+			</if>
+        </ul>
+        <h6 class="xian"></h6>
+        <div class="sell clearfix">
+            累计已售<span>{$activemodel.count}</span>份
+            <div class="clearfix">
+            <foreach name="userlist" item="vo">
+                <img src="/{$vo.header_img}" alt="" class="img-responsive">
+                </foreach>
+            </div>
+        </div>
+        <h6 class="xian"></h6>
+        <div class="choice clearfix">
+            <p id="jingxuan">精选套餐</p>
+            <foreach name="taocanlist" item="vo">
+            <ul class="line setMeal">
+                <li class="x9">
+                     <p>{$vo.me_title}</p>
+                     <p>{$vo.me_info}</p>
+                </li>
+                <li class="x3">
+                   <p> <sup>¥</sup><span>{$vo.leastprice}</span>元</p>
+                    <a href="/Home/Min/join/id/{$vo.id}" class="text-white text-center">选择日期</a>
+                </li>
+            </ul>
+            </foreach>
+        </div>
+        <h6 class="xian"></h6>
+        <div class="tab">
+            <div class="tab-head clearfix">
+                <ul class="tab-nav clearfix tab_list">
+                    <li class="active x4"><a href="#tab-start5">详情</a> </li>
+                    <li class="x4"><a href="#tab-css5">评价<i>（{$commentcount}）</i></a> </li>
+                    <li class="x4"><a href="#tab-units5">留言<i>（{$leamsgcount}）</i></a> </li>
+                </ul>
+            </div>
+            <!--标签页1-->
+            <div class="tab-body">
+                <div class="tab-panel active " id="tab-start5">
+					{$activcontent}
+                </div>
+                <!--标签页2-->
+                <div class="tab-panel" id="tab-css5">
+                    <p class="text-center">整体评分 
+                        <if condition="$average_star eq 2">
+                           <img src="__PUBLIC__/images/star2.png" alt="" class="img-responsive" style="display: inline-block">   
+                           <span class="part">{$average_star}分</span>
+                         <elseif condition="$average_star eq 3"/>
+                           <img src="__PUBLIC__/images/star3.png" alt="" class="img-responsive" style="display: inline-block"> 
+                           <span class="part">{$average_star}分</span>
+                         <elseif condition="$average_star eq 4"/>
+                           <img src="__PUBLIC__/images/star4.png" alt="" class="img-responsive" style="display: inline-block"> 
+                           <span class="part">{$average_star}分</span>
+                         <else/>
+                          <img src="__PUBLIC__/images/star5.png" alt="" class="img-responsive" style="display: inline-block"> 
+                          <span class="part">5分</span>   
+                         </if>
+                         
+                    </p>
+                    <foreach name="commentlist" item="vo">
+                    <div class="messageBoard line">
+                        <img src="/{$vo.header_img}" alt="" class="img-responsive x2 float-left radius-circle padding">
+                        <div class="x10 border-bottom">
+                            <p>{$vo.nick_name}
+                                 <if condition="$vo.star eq 2">
+		                           <img src="__PUBLIC__/images/star2.png" alt="" class="img-responsive float-right" style="display: inline-block">   
+		                         <elseif condition="$vo.star eq 3"/>
+		                           <img src="__PUBLIC__/images/star3.png" alt="" class="img-responsive float-right" style="display: inline-block"> 
+		                         <elseif condition="$vo.star eq 4"/>
+		                           <img src="__PUBLIC__/images/star4.png" alt="" class="img-responsive float-right" style="display: inline-block"> 
+		                         <else/>
+		                          <img src="__PUBLIC__/images/star5.png" alt="" class="img-responsive float-right" style="display: inline-block"> 
+		                         </if>
+                             </p>
+                            <h6>{$vo.addTime}</h6>
+                            <div class="text-break clearfix">
+							    {$vo.content}
+                            </div>
+                        </div>
+                    </div>
+                    </foreach>
+                </div>
+                <!--标签页3-->
+                <div class="tab-panel  " id="tab-units5">
+                    <div class="liuyanbox clearfix" style="background: #f8f8f8;">
+                        <form action="/Home/Min/leamsg" method="post">
+                            <textarea class="put0" rows="4" name="leavemsg" placeholder="请输入您的留言,零距离童军客服会尽快回复您哦~"></textarea>     
+                                  <input type="submit" value="我要留言">
+                                  <input type="hidden" name="id" value="{$activemodel.ac_id}">
+                            <div class="nocontent" style="display: none" >
+                                <p>
+                                    请输入留言内容<br>
+                                    <a href="#" class="Determine">确定</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <foreach name="leamsglist" item="vo">
+	                    <div class="line liuyanContent border-bottom padding-big">
+	                        <img src="/{$vo.header_img}" alt="" class="img-responsive radius-circle x2">
+	                        <div class="x10">
+	                            <p>{$vo.nick_name} <span class="liuyandate">{$vo.addTime}</span> </p>
+	                            <h6 class="text-large padding-bottom ">
+	                                {$vo.content}
+	                            </h6>
+	                            <div class="huifucontent padding ">
+	                                <span><em></em></span>
+	                                <ul class="line">
+	                                    <li class="x2"><img src="__PUBLIC__/images/logo.png" alt="" class="img-responsive "></li>
+	                                    <li class="x10">
+	                                                                                                    零距离童军
+	                                        <span>{$vo.responsetime}</span>
+	                                        <p class="CustomerService">
+	                                            {$vo.response}
+	                                        </p>
+	                                    </li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </div>   
+	                 </foreach>
+                </div>
+            </div>
+        </div>
+    </section>
+<div style="height:10rem">
+
+</div>
+<!--页脚-->
+    <footer class="layout fixed-bottom  footer" style="position: fixed;bottom: 0">
+        <div class="layout">
+        <ul class="line footimg text-center" >
+            <li class="x3"><a href="tel:0513-85221106"><img src="__PUBLIC__/images/btn_kefu.png" class="img-responsive" >客服</a></li>
+            <li class="x3"><a href="/Home/Min/share"><img src="__PUBLIC__/images/btn_fenxiang.png" class="img-responsive" >分享 <span>+5</span></a></li>
+	            <if condition="$activemodel.status eq 0">
+	              <if condition="$count neq 1">
+                     <li class="x6 "><a href="#jingxuan" class="xuanzetaocan text-center text-white">选择套餐</a></li>
+                  <else/>
+                     <li class="x6 "><a href="/Home/Min/join/id/{$mealmodel.id}" class="xuanzetaocan text-center text-white">我要报名</a></li>
+                  </if>
+	            <else/>
+	                <li class="x6 "><a href="#" class="xuanzetaocan text-center text-white" style="background:#ddd;">我要报名</a></li>
+               </if>
+         </ul>
+        </div>
+
+    </footer>
+<script src="__PUBLIC__/pintuer/jquery.js"></script>
+<script src="__PUBLIC__/pintuer/pintuer.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=iNRD8iIAjCuobjHgg72ukB5ghbKpsaj4"></script>
+ <script src="__PUBLIC__/js/swiper.min.js"></script>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction'
+    });
+</script>
+</body>
+</html>

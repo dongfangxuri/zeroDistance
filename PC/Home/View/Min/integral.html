@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>积分</title>
+    <meta charset="utf-8"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!--<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no,maximum-scale=1.0">-->
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/pintuer.css">
+    <style>
+
+        h1.text-white{
+            font-size: 2.2rem;
+        }
+        .totalPoints{
+            margin: 0;
+            font-size: 2.2rem;
+            line-height:5.2rem;
+            text-align: center;
+        }
+        .totalPoints img{
+            width:10%;
+            display: inline-block;
+            margin-left: 20%;
+
+        }
+        .text-color{
+            color:#FD4F64;
+        }
+        .share{
+            font-size: 2.4rem;
+            text-align: center;
+            color: #222;
+        }
+        .friend{
+            list-style: none;
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+       .friend_list{
+           width: 740px;
+           margin: 0 auto;
+       }
+        .integral{
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+            color: #000;
+            margin-bottom: 5rem;
+        }
+        .way{
+            font-size: 1.8rem;
+        }
+        .wx_friend{
+            margin:0 1.2rem 0 2.6rem;
+
+            width:7.5rem;
+            height: 8.7rem;
+            background: url(__PUBLIC__/images/share.png)no-repeat 5% 50%;
+        }
+        .friend_circle{
+            margin:0 1.2rem 0 2.6rem;
+            margin-top: 0;
+            width:7.5rem;
+            height: 8.7rem;
+            background: url(__PUBLIC__/images/share.png)no-repeat 34% 50%;
+        }
+        .Qzone{
+            margin:0 1.2rem 0 2.6rem;
+
+            width:7.5rem;
+            height: 8.7rem;
+            background: url(__PUBLIC__/images/share.png)no-repeat 34% 12%;
+        }
+        .QQ_friend{
+            margin:0 1.2rem 0 2.6rem;
+            width:7.5rem;
+            height: 8.7rem;
+            background: url(__PUBLIC__/images/share.png)no-repeat 4% 11%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div  class="line text-center padding-big " style="background: #FC9A03">
+
+        </div>
+      <p class="clearfix totalPoints">
+                当前积分 <span class="text-color">{$model.star}分</span>
+      </p>
+        <div class="text-center">
+           <span class="share border-bottom x12 padding text-left ">积分规则</span>
+            <ul class="friend">
+                <li>微信好友，群：10积分</li>
+                <li>Q Q好友，群：10积分</li>
+                <li>微信圈：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30积分</li>
+                <li>Q Q空间：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30积分</li>
+            </ul>
+            <p class="integral">每天最高可获得300积分<br>积分可抵消活动费用</p>
+        </div>
+        <div class="margin-big-top clearfix">
+            <p class="x3 border-bottom margin-top"></p>
+            <p class="x6 way text-center height-large">通过以下方式进行分享</p>
+            <p class="x3 border-bottom margin-top" ></p>
+        </div>
+        <div class="line  text-center friend_list" style="margin-left:550px;">
+            <a href="#" class="x3 wx_friend"></a>
+            <a href="#" class="x3 friend_circle"></a>
+            <a href="#" class="x3 Qzone"></a>
+            <a href="#" class="x3 QQ_friend"></a>
+        </div>
+    </div>
+
+</body>
+</html>

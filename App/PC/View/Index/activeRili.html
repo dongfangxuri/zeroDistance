@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>亲子旅游</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/start.css">
+    <style>
+
+        /*<!--日历的父元素-->*/
+        #calendar_choose{
+            width: 1200px;
+            text-align: center;
+        }
+
+        /*<!-- p -->*/
+        .calendar_left{
+            position: relative;
+            background: #00A7DB;
+            width:100%;
+            height: 80px;
+            line-height: 80px;
+            color: #fff;
+            font-size: 24px;
+        }
+        /*上一月*/
+        #picker_last{
+            position: absolute;
+            top: 0px;
+            left:455px;
+            color: #fff;
+            width: 20px;
+            font-size: 24px;
+        }
+        /*下一月*/
+        #picker_next{
+            position: absolute;
+            top: 0px;
+            color: #fff;
+            right:450px;
+            font-size: 24px;
+        }
+        /*礼拜*/
+        .calendar_num{
+            position: absolute;
+            top:80px;
+            left: 0px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background: #D4D4D4;
+            border:1px solid #969696;
+        }
+        .calendar_num li{
+            float: left;
+            width: 171px;
+            height: 40px;
+            border-right: 1px solid #969696;
+        }
+        .calendar_num li:last-child {
+            border-right:none;
+        }
+
+        /*天*/
+       #calendar_tab{
+           position: absolute;
+           top:120px;
+           left: 0px;
+           height: 356px;
+           width: 100%;
+           background: #fff;
+           border-collapse:collapse;
+       }
+
+        #calendar_tab  tbody tr td{
+            width: 60px;
+            height: 59px;
+            border:1px solid #ddd;
+        }
+        .bold{
+            color: #EC3838;;
+        }
+    </style>
+
+</head>
+<body>
+    <!--页头-->
+    <!--页面主体-->
+    <section  id="start_main">
+
+        <!-- 首页-->
+        <div class="home">
+            <div><a href="#"><span>首页 </span></a>&gt;</div>
+            <div><a href="#">亲子游学</a></div>
+        </div>
+        <!-- 搜索框-->
+        <form action="#" class="myForm">
+            <input type="search" placeholder="城市/景点/酒店" class="search_box"/>
+            <p></p>
+            <a href="#"> <img src="__PUBLIC__/pc/images/imgs/search.png" alt=""/></a>
+        </form>
+        <div id="calendar" style="width: 100%; min-height: 475px;padding-right: 1px;">
+            <!--日历-->
+
+        </div>
+        <!-- 参团进行中详情-->
+        <div class="group_list">
+            <!--进行中-->
+            <div class="group_list_left">
+                <!--第一行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第2行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第3行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第4行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第5行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第6行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第7行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第8行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第9行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第10行-->
+                <div class="details">
+                    <!--进行详情--> <!--左边部分-->
+                    <div class="aside_left">
+                        <ul class="left">
+                            <li><span>进行中</span></li>
+                            <li>已有<b>158</b>人报名</li>
+                        </ul>
+                        <div class="boxBottom">
+                            <a href="#"><img src="__PUBLIC__/pc/images/imgs/mainphoto.png" alt=""/></a>
+                            <ul class="Left">
+                                <li><a href="#">手工DIY</a></li>
+                                <li>|</li>
+                                <li><a href="#">上海市</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右侧进行详情文本-->
+                    <div class="aside_right">
+                        <div class="rigthTxt">
+                            <p>三亚海棠湾9号度假酒店双飞4天3晚自由行（全程入住<br/>海景湾 享入住温泉及户外温泉泳池 古朴风格 赠早餐……</p>
+                            <ul class="left">
+                                <li><a href="#">2天1晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">3-12岁</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                            <div>￥<span>980</span>元起/人</div>
+                            <a href="#">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--热点项目-->
+            <div class="group_list_right">
+                <p>热点推荐</p>
+                <!--图片-->
+                <!--第一张-->
+                <div class="hot">
+                    <ul>
+                        <li><a href="#"><img src="__PUBLIC__/pc/images/imgs/photoright.png"/></a></li>
+                        <li><a href="#" class="hot_well">【温泉度假之旅】住2晚广州都喜泰丽温泉度假酒店、丰富自助……</a></li>
+                    </ul>
+                </div>
+                <!--第二张-->
+                <div class="hot">
+                    <ul>
+                        <li><a href="#"><img src="__PUBLIC__/pc/images/imgs/photoright.png"/></a></li>
+                        <li><a href="#" class="hot_well">【温泉度假之旅】住2晚广州都喜泰丽温泉度假酒店、丰富自助……</a></li>
+                    </ul>
+                </div>
+                <!--第三张-->
+                <div class="hot">
+                    <ul>
+                        <li><a href="#"><img src="__PUBLIC__/pc/images/imgs/photoright.png"/></a></li>
+                        <li><a href="#" class="hot_well">【温泉度假之旅】住2晚广州都喜泰丽温泉度假酒店、丰富自助……</a></li>
+                    </ul>
+                </div>
+                <!--第四张-->
+                <div class="hot">
+                    <ul>
+                        <li><a href="#"><img src="__PUBLIC__/pc/images/imgs/photoright.png"/></a></li>
+                        <li><a href="#" class="hot_well">【温泉度假之旅】住2晚广州都喜泰丽温泉度假酒店、丰富自助……</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--分页 -->
+        <div class="paging">
+            <ul class="page">
+                <li><a href="#" class="upPage"><img src="__PUBLIC__/pc/images/imgs/leftarrow.png">&nbsp;上一页</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li>……</li>
+                <li><a href="#">17</a></li>
+                <li><a href="#" class="upPage"> 下一页&nbsp;<img src="__PUBLIC__/pc/images/imgs/rightarrow.png"></a></li>
+            </ul>
+        </div>
+
+    </section>
+    <!--页脚-->
+    <div id="footer"></div>
+    <script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=iNRD8iIAjCuobjHgg72ukB5ghbKpsaj4"></script>
+    <script src="__PUBLIC__/pc/js/rili.js"></script>
+    <script>
+    $( function AjaxTime(){
+    $.get("__PUBLIC__/pc/date1.php",function(data) {
+    pickerEvent.setPriceArr(eval("("+data+")"));
+    pickerEvent.Init("calendar");
+    });
+    });
+    </script>
+
+    <script src="__PUBLIC__/pc/js/detailAll.js"></script>
+
+</body>
+</html>

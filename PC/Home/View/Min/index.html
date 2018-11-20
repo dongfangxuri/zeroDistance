@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>零距离童军-个人中心</title>
+    <meta charset="UTF-8">
+    <link href="__PUBLIC__/pc/css/mobiscroll.custom-2.16.1.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/myhomepage.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/page.css">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .dwbc{
+            background: #fff;
+        }
+        .dwcc{
+            background: #fff;
+        }
+       .popover-title{
+           display: none;
+       }
+        /*新添加*/
+        .rank{
+            margin-right: 1rem;
+        }
+        .child_msg form li input{
+            background: #fff;
+        }
+        .child_msg form li select{
+            -moz-appearance: none;
+            -webkit-appearance:none;
+            appearance:none;
+            width: 50px;
+            border:none;
+            color: #545454;
+
+        }
+        .del_child:hover{
+            color: #FF0000;
+        }
+        .set_child{
+            background: #fff;
+        }
+        .photo_box{
+            position: relative;
+        }
+        .photo_box input{
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<header class="headerBox">
+    <div class="top_box">
+        <!-- 页头左侧部分
+        <ul class="city lt">
+            <li>所在城市：</li>
+            <li ><a href="#" class="current_city">南通</a></li>
+            <li><a href="#"><img src="__PUBLIC__/pc/images/head/position.png" /></a></li>
+        </ul> -->
+       <!-- 页头右侧部分-->
+       <p class="rt">
+           <a href="/Home/Min/userexit">退出</a>
+       </p>
+    </div>
+    <!--logo-->
+    <div class="logo_box">
+        <div class="Subtab">
+            <a href="index.html" class="lt"><img src="__PUBLIC__/pc/images/logo.png" alt=""></a>
+            <!--控制台-->
+            <div class="console">
+                <!---->
+                <ul class="lt">
+                    <li><a href="/Home/Index/index">首页</a></li>
+                    <li class="user_set">
+                        <a>账户设置</a>
+                        <ul class="drop_down">
+                             <li><a href="/Home/Min/set">修改设置</a></li>
+                            <li><a href="/Home/Min/changePwd">修改密码</a></li>
+                        </ul>
+                    </li>
+                    <li class="message"><a href="/Home/Message/index">消息 <span>{$messagecount}</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ </header>
+<section id="meOrder">
+    <div class="HeadPortrait">
+        <p>
+            昵称：<span class="petName">{$model.nick_name}</span>
+            我的积分：<span class="integral">{$model.star}</span>
+        </p>
+        <img src="__PUBLIC__/pc/images/bg_head_images.png" alt="">
+        <img src="/{$model.header_img}" alt="" class="head_images">
+    </div>
+    <ul class="my_order">
+        <h6>我的订单</h6>
+        <li class="tabs_active">
+            <a href="#pay_order">待付款订单</a>
+        </li>
+        <li >
+            <a href="#trip_order">未出行订单</a>
+        </li>
+        <li >
+            <a href="#appraise_order">待评价订单</a>
+        </li>
+        <li >
+            <a href="#finish_order">已完成订单</a>
+        </li>
+        <h6>我的社区</h6>
+        <li >
+            <a href="#me_collect">我的收藏</a>
+        </li>
+        <li >
+            <a href="#going_out">我的出行人</a>
+        </li>
+        <!-- <li >
+            <a href="#me_honor">我的荣誉</a>
+        </li>  -->
+        <li>
+            <a href="#child_grow_up">孩子成长</a>
+        </li>
+    </ul>
+    <div class="page_all">
+        <!--代付款-->
+        <div id="pay_order" class="active_pages" >
+        <foreach name="filter_unpay_list" item="vo">
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>{$vo.addTime}</span></span>
+                <span class="OrdersNum">订单编号：<span>{$vo.order_sn}</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img  src="/{$vo.pic}" alt=""></li>
+                    <li class="photo">{$vo.ac_title}（活动时间：<span>{$vo['start_time2']}</span>~<span>{$vo['end_time']}</span>）</li>
+                    <li>开始时间：<span class="start_time">{$vo['start_time1']}</span></li>
+                    <li>活动人数：{$vo.meal_str}</li>
+                    <li>活动景区：{$vo['view_addr']}</li>
+                </ul>
+                <a href="__CONTROLLER__/pay/orderid/{$vo.oid}" class="promptly">立即支付</a>
+                <a href="__CONTROLLER__/cancle_order/orderid/{$vo.oid}" class="cancel">取消订单</a>
+            </div>
+        </foreach>
+                  <div class="pages" style="height: 80px">    
+　　                           {$page1}
+        </div>
+        </div>
+        <!--未出行-->
+        <div id="trip_order">
+        <foreach name="filter_unshopping_list" item="vo">
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>{$vo.addTime}</span></span>
+                <span class="OrdersNum">订单编号：<span>{$vo.order_sn}</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="/{$vo.pic}" alt=""></li>
+                    <li class="photo">{$vo.ac_title}（活动时间：<span>{$vo['start_time2']}</span>~<span>{$vo['end_time']}</span>）</li>
+                    <li>开始时间：<span class="start_time">{$vo['start_time1']}</span></li>
+                    <li>活动人数：{$vo.meal_str}</li>
+                    <li>活动景区：{$vo['view_addr']}</li>
+                </ul>
+               <p class="lt">
+                  <if condition="$vo.is_over eq 0">
+                   距离出行日期还有：<span class="day">{$vo['distance']['day']}</span>天<span class="hour">{$vo['distance']['hour']}</span>小时<span class="minute">{$vo['distance']['minute']}</span>分
+                  <else/>
+                       <span>活动已结束</span>
+                  </if>
+                   <p class="rt">已付款：￥<span class="money">{$vo.order_amount}</span></p>
+               </p>
+            </div>
+        </foreach>
+            <!--分页-->
+             <div class="pages" style="height: 80px">    
+　　                                   {$page2}
+             </div>
+        </div>
+        <!--待评价-->
+        <div id="appraise_order">
+        <foreach name="filter_uncomment_list" item="vo">
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>{$vo.addTime}</span></span>
+                <span class="OrdersNum">订单编号：<span>{$vo.order_sn}</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="/{$vo.pic}" alt=""></li>
+                    <li class="photo">{$vo.ac_title}（活动时间：<span>{$vo['start_time2']}</span>~<span>{$vo['end_time']}</span>）</li>
+                    <li><span class="end">活动已结束</span></li>
+                </ul>
+                <p class="rt">
+                    <a href="__CONTROLLER__/evaluate/orderid/{$vo.oid}">立即评价</a>
+                </p>
+            </div>
+            </foreach>
+            <!--分页-->
+              <div class="pages" style="height: 80px">    
+　　                                    {$page3}
+              </div>
+        </div>
+        <!--完成-->
+        <div id="finish_order">
+        <foreach name="filter_ok_list" item="vo">
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>{$vo.addTime}</span></span>
+                <span class="OrdersNum">订单编号：<span>{$vo.order_sn}</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="/{$vo.pic}" alt=""></li>
+                    <li class="photo">{$vo.ac_title}（活动时间：<span>{$vo['start_time2']}</span>~<span>{$vo['end_time']}</span>）</li>
+                    <li><span class="end">活动已结束</span></li>
+
+                </ul>
+                <p class="rt">
+                    <a href="__CONTROLLER__/chevaluate/orderid/{$vo.oid}">修改评价</a>
+                </p>
+            </div>
+       </foreach>
+            <!--分页-->
+              <div class="pages" style="height: 80px">    
+　　                                    {$page4}
+              </div>
+        </div>
+        <!--收藏-->
+        <div id="me_collect">
+        <foreach name="collectlist" item="vo">
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="/{$vo.pic}" alt=""></li>
+                    <li class="photo">活动时间：<span>{$vo['start_time2']}</span>~<span>{$vo['end_time']}</span></li>
+                    <li>活动景区：{$vo['view_addr']}</li>
+                    <li>￥<span class="lowest">1380</span>元起</li>
+                </ul>
+                <a href="/Home/Active/index/ac_id/{$vo.ac_id}" class="check">查看活动详情</a>
+                <a href="__CONTROLLER__/uncollect/ac_id/{$vo.ac_id}" class="deselect">取消收藏</a>
+            </div>
+        </foreach>
+             <div class="pages" style="height: 80px">    
+　　                                    {$page5}
+              </div>
+        </div>
+        <!--出行人-->
+        <div id="going_out">
+            <!--接收-->
+            <foreach name="contactlist" item="vo">
+            <form action="/Home/Min/contact_update" id="receive" method="post">
+                <div class="receive_box">
+                    <ul class="user_data_text">
+                        <li>姓名</li>
+                        <li>性别</li>
+                        <li>出生日期</li>
+                        <li>证件类型</li>
+                        <li>证件号码</li>
+                    </ul>
+                    <ul class="user_data">
+						<li><input type="text" name="name" value="{$vo.name}" disabled></li>
+                        <li>
+						    <select name="sex" id="" disabled>
+						      <if condition="$vo.sex eq 1">
+                                <option value="1">男</option>
+                                <option value="2">女</option>
+                              <else/>
+                                 <option value="2">女</option>
+                                <option value="1">男</option>
+                                </if>
+                            </select>
+						</li>
+                        <li>
+						   <input type="text" name="born" value="{$vo.born}" disabled>
+						</li>
+						<!-- 增加一个证件类型 -->
+						<li>
+                            <select name="" class="zhengjian" disabled >
+                            <if condition="$vo.ID_type eq 1">
+                               <option value="1"  selected>身份证</option>
+                               <option value="2">临时身份证</option>
+		                       <option value="3">军官证</option>
+		                       <option value="4">士兵证</option>
+		                       <option value="5">回乡证</option>
+		                       <option value="6">台胞证</option>
+		                       <option value="7">港澳通行证</option>
+                            </if>
+                            <if condition="$vo.ID_type eq 2"> 
+                            
+		                       <option value="2" selected>临时身份证</option>
+		                       <option value="1">身份证</option>
+		                       <option value="3">军官证</option>
+		                       <option value="4">士兵证</option>
+		                       <option value="5">回乡证</option>
+		                       <option value="6">台胞证</option>
+		                       <option value="7">港澳通行证</option>
+		                    </if>  
+		                    <if condition="$vo.ID_type eq 3">  
+		                       <option value="3" selected>军官证</option>
+		                       <option value="1">身份证</option>
+		                       <option value="2">临时身份证</option>
+		                       <option value="4">士兵证</option>
+		                       <option value="5">回乡证</option>
+		                       <option value="6">台胞证</option>
+		                       <option value="7">港澳通行证</option>
+		                      </if>    
+		                       <if condition="$vo.ID_type eq 4"> 
+		                       <option value="4" selected>士兵证</option>
+		                       <option value="1">身份证</option>
+		                       <option value="2">临时身份证</option>
+		                       <option value="3">军官证</option>
+		                       <option value="5">回乡证</option>
+		                       <option value="6">台胞证</option>
+		                       <option value="7">港澳通行证</option>
+		                        </if>    
+		                        <if condition="$vo.ID_type eq 5"> 
+		                       <option value="5" selected>回乡证</option>
+		                       <option value="1">身份证</option>
+		                       <option value="2">临时身份证</option>
+		                       <option value="3">军官证</option>
+		                       <option value="4">士兵证</option>
+		                        <option value="6">台胞证</option>
+		                       <option value="7">港澳通行证</option>
+		                         </if>   
+		                         <if condition="$vo.ID_type eq 6">  
+		                       <option value="6" selected>台胞证</option>
+		                       	<option value="1">身份证</option>
+		                       <option value="2">临时身份证</option>
+		                       <option value="3">军官证</option>
+		                       <option value="4">士兵证</option>
+		                       <option value="5">回乡证</option>
+		                       	<option value="7">港澳通行证</option>
+		                        </if>
+		                        <if condition="$vo.ID_type eq 6"> 
+		                       <option value="7">港澳通行证</option>
+		                        </if>
+                            </select>
+                        </li>
+                        <li>
+						   <input type="text" name="ID_card" value="{$vo.ID_card}" disabled>
+						</li>
+						<input type="hidden" name="id" value="{$vo.id}"/>
+                        <input type="submit" class="alter" onclick="return checkForm(this);" value="修改" />
+                        <a href="/Home/Min/contact_del/id/{$vo.id}" onclick="return confirm('确定要删除此记录吗');" class="del">删除</a>
+
+                    </ul>
+                </div>
+            </form>
+            </foreach>
+             <div class="pages" style="height: 80px">    
+　　                           {$page6}
+        </div>
+            <!--发送-->
+            <form action="/Home/Min/contact_add1" id="send" method="post">
+                <div class="send_box">
+                    <ul class="user_data_text">
+                        <li>姓名</li>
+                        <li>性别</li>
+                        <li>出生日期</li>
+                        <li>证件类型</li>
+                        <li>身份证号</li>
+                    </ul>
+                    <ul class="user_data_content">
+                        <li><input type="text" name="name" class="client_name"></li>
+                        <li>
+                            <div data-role="fieldcontain" class="demo-cont" >
+                                <select name="sex" class="demo_select" data-role="none">
+                                    <option value="0">请选择性别</option>
+                                    <option value="1" selected="selected">男</option>
+                                    <option value="2">女</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <!--插件-->
+                            <div data-role="fieldcontain" class="demo-cont">
+                                <input type="text" name="born" class="demo_date"  placeholder="2016/10/13" />
+                            </div>
+                        </li>
+						<li>
+                            <select name="" class="zhengjian"  >
+                                <option value="" selected>身份证</option>
+		                       <option value="2">临时身份证</option>
+		                       <option value="3">军官证</option>
+		                       <option value="4">士兵证</option>
+		                       <option value="5">回乡证</option>
+		                       <option value="6">台胞证</option>
+		                       <option value="7">港澳通行证</option>
+                            </select>
+                        </li>
+                        <li><input type="text" name="ID_card" placeholder="请输入证件号" class="credentials"></li>
+                        <input type="submit" value="取消" class="abolish" onclick="dele(this)" />
+                        <input type="submit" value="提交" class="put_in" />
+                    </ul>
+                </div>
+                <!--<input type="submit" value="新增出行人" id="add_user">-->
+            </form>
+
+            <a href="#" id="add_user">新增出行人</a>
+        </div>
+        <!--孩子成长-->
+        <div id="child_grow_up" >
+            <div class="child_data_box">
+                <div class="child_medal">
+                 <foreach name="childlsit" item="vo">
+                    <div>
+                        <!--资料-->
+                         <ul class="child_msg">
+                                <form action="/Home/Kid/kids_update" method="post" enctype="multipart/form-data" >
+                                    <li class="photo_box">
+                                        <input type="file" name="header_img" class="photo" onchange="previewImage(this)" disabled>
+                                          <div id="preview">
+                                            <empty name="vo.header_img">
+                                              <img id="imghead" border=0 src='__PUBLIC__/pc/images/child.png' class="preview">
+                                            <else/>
+                                              <img src="/{$vo.header_img}" alt="">
+                                            </empty>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>姓名：<input type="text" name="name" value="{$vo.name}" disabled></li>
+                                    <li>性别： <select name="sex" disabled >
+                                            <option value="1">男</option>
+                                            <option value="2">女</option>
+                                        </select>
+                                    </li>
+                                    <li>学校：<input type="text" name="addr" value="{$vo.addr}" disabled></li>
+                                    <a href="/Home/Kid/kids_dele/kid/{$vo.id}" onclick="return confirm('确定要删除此记录吗');" class="del_child">删除</a>
+                                    <input type="hidden" name="kid" value="{$vo.id}" >
+                                    <input type="submit" class="set_child" value="修改"  onclick="return checkForm(this);">
+                                </form>
+                            </ul>
+                        <!--勋章-->
+                      <div class="child_medal_box">
+	                        <p>童军级别：<span class="rank">{$vo.rank}</span>童军徽章：<span class="medal_num">{$vo.badge_number}</span>个</p>
+	                        <foreach name="vo.active" item="vo1">
+		                        <div class="decoration" >
+		                            <p class="site">{$vo1.ac_title}</p>
+		                             <p class="decoration_img"><img src="/{$vo.rank_pic}" alt=""></p>
+		                            <ul>
+		                                <li>队名：{$vo1.group_name}</li>
+		                                <li>担任职务：{$vo1.group_role}</li>
+		                                <li>小队口号：{$vo1.group_slogan}</li>
+		                                <li>个人简评：{$vo1.active_evalute}</li>
+		                            </ul>
+		                        </div>
+		                   <!--  <foreachelse>
+		                      <span>暂无成长经历</span>  -->
+		                    </foreach>
+		                    
+                       </div>
+                    </div>
+                </foreach>
+                <div class="pages" style="height: 80px">    
+　　                           {$page7}
+        </div>
+                </div>
+            </div>
+            <!--底部信息-->
+            <div id="root_box">
+                <div class="textbox">
+                    <p class="bg_text">
+                            每个活动见证着孩子的自我成长</br>
+                          童军荣誉成为孩子内在的成长的驱动力
+                        </ul>
+                    </p>
+                    <ul>
+                        <li> 我们打造中国特色的童军训练体系</li>
+                        <li> 我们遵循教育的自然性，释放孩子的无线潜能</li>
+                        <li> 我们激发保护孩子好奇心，培养独立自强，面向未来公民意识</li>
+                    </ul>
+                </div>
+                <div class="textbox" style="margin: 0 28px">
+                    <p class="bg_text1">
+                        每个活动见证着孩子的自我成长</br>
+                        童军荣誉成为孩子内在的成长的驱动力
+                        </ul>
+                    </p>
+                    <ul>
+                        <li> 我们打造中国特色的童军训练体系</li>
+                        <li> 我们遵循教育的自然性，释放孩子的无线潜能</li>
+                        <li> 我们激发保护孩子好奇心，培养独立自强，面向未来公民意识</li>
+                    </ul>
+                </div>
+                <div class="textbox">
+                    <p class="bg_text2">
+                        每个活动见证着孩子的自我成长</br>
+                        童军荣誉成为孩子内在的成长的驱动力
+                        </ul>
+                    </p>
+                    <ul>
+                        <li> 我们打造中国特色的童军训练体系</li>
+                        <li> 我们遵循教育的自然性，释放孩子的无线潜能</li>
+                        <li> 我们激发保护孩子好奇心，培养独立自强，面向未来公民意识</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="foot">
+        <!-- 二维码-->
+        <img src="/Public/pc/images/foot/Qr-code.png" alt=""/>
+        <!-- 咨询热线-->
+        <span>咨询热线：{$aboutmodel.service}</span>
+        <!-- 备案号-->
+        <p>{$aboutmodel.right}</p>
+    </div>
+</footer>
+<script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+
+<script src="__PUBLIC__/pc/js/date.js"></script>
+
+<script src="__PUBLIC__/pc/js/mobiscroll.custom-2.16.1.min.js" type="text/javascript"></script>
+<script>
+    <!--添加出行人-->
+    $('#going_out').on("click","#add_user",function(e){
+        e.preventDefault();
+        var html='<div class="send_box">'+
+                '<ul class="user_data_text">'+
+                    '<li>姓名</li>'+
+                    '<li>性别</li>'+
+                    ' <li>出生日期</li>'+
+                    '<li>身份证号</li>'+
+                '</ul>'+
+                ' <ul class="user_data_content">'+
+                    ' <li><input type="text" class="client_name"></li>'+
+
+                    '<li>'+
+                    '<div data-role="fieldcontain" class="demo-cont" >'+
+                    '<select name="性别" class="demo_select" data-role="none">'+
+                    '<option value="0">请选择性别</option>'+
+                    '<option value="1" selected="selected">男</option>'+
+                    '<option value="2">女</option>'+
+                    '</select>'+
+                    '</div>'+
+
+
+                    '</li>'+
+                    '<li>'+
+                        // <!--插件-->
+                    '<div data-role="fieldcontain" class="demo-cont">'+
+                    '<input type="text" class="demo_date"   placeholder="2016/10/13" />'+
+                    '</div>'+
+
+                    '</li>'+
+                    '<li>'+
+                        '<select name="" class="zhengjian" >'+
+                            '<option value="" selected>身份证</option>'+
+                            '<option value="">临时身份证</option>'+
+                            '<option value="">护照</option>'+
+                            '<option value="">军官证</option>'+
+                            '<option value="">士兵证</option>'+
+                            '<option value="">回乡证</option>'+
+                            '<option value="">台胞证</option>'+
+                        '</select>'+
+                    '</li>' +
+                    '<li><input type="text" placeholder="请输入证件号" class="credentials"></li>'+
+                    '<input type="submit" value="取消" class="abolish" onclick="dele(this)"/>'+
+                    '<input type="submit" value="提交" class="put_in">'+
+                '</ul>'+
+                '</div>';
+        //新添加的dom没有执行上边调用插件的代码；
+        $(html).appendTo("#send");
+        init();
+    });
+
+    //   点击取消 删除当前行
+    function dele(btn){
+        $(btn).parent().parent().remove();
+    };
+    // $(function () {
+    function init() {
+        // Select demo initialization  demo_select
+        $('.demo_select').mobiscroll().select({
+            theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default
+            mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default
+            display: display, // Specify display mode like: display: 'bottom' or omit setting to use default
+            lang: lang        // Specify language like: lang: 'pl' or omit setting to use default
+        });
+
+        // Date demo initialization
+        $('.demo_date').mobiscroll().date({
+            theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default
+            mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default
+            display: display, // Specify display mode like: display: 'bottom' or omit setting to use default
+            lang: lang        // Specify language like: lang: 'pl' or omit setting to use default
+        });
+
+
+    }
+
+
+
+
+
+    var demo, theme, mode, display, lang;
+
+    theme = "bootstrap",
+            lang = "zh";
+    $(".demo_cont_" + demo).show();
+    init();
+
+    $(".alter").on("click",function(e){
+        $(this).prevAll().children().prop("disabled",false);
+        $(this).val("保存");
+    });
+    function checkForm(btn)
+    {
+    	if($(btn).val()=='修改')
+    		{
+    		   return false;
+    		}
+    	else
+    		{
+    		   return true;
+    		}
+    }
+    $(".set_child").on("click",function(){
+        if(this.html="修改"){
+            $(this).prevAll().children().prop("disabled",false);
+            $(this).val("保存");
+        }
+    });
+</script>
+<script type="text/javascript">
+    //图片上传预览    IE是用了滤镜。
+    function previewImage(file){
+        var MAXWIDTH  = 140;
+        var MAXHEIGHT = 140;
+        var div = document.getElementById('preview');
+        console.log(div);
+        if (file.files && file.files[0])
+
+        {
+            div.innerHTML ='<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+            }
+            var reader = new FileReader();
+            reader.onload = function(evt){img.src = evt.target.result;}
+            reader.readAsDataURL(file.files[0]);
+        }
+        else //兼容IE
+        {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+
+
+
+
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+        var param = {top:0, left:0, width:width, height:height};
+        if( width>maxWidth || height>maxHeight ){
+            rateWidth = width / maxWidth;
+            rateHeight = height / maxHeight;
+            if( rateWidth > rateHeight ){
+                param.width =  maxWidth;
+                param.height = Math.round(height / rateWidth);
+            }else{
+                param.width = Math.round(width / rateHeight);
+                param.height = maxHeight;
+            }
+        }
+        param.left = Math.round((maxWidth - param.width) / 2);
+        param.top = Math.round((maxHeight - param.height) / 2);
+        return param;
+    }
+
+
+
+
+</script>
+</body>
+</html>                                

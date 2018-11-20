@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/mobiscroll.custom-2.16.1.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/myhomepage.css">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .dwbc{
+            background: #fff;
+        }
+        .dwcc{
+            background: #fff;
+        }
+       .popover-title{
+           display: none;
+       }
+       /*新添加*/
+        .rank{
+            margin-right: 1rem;
+        }
+        .child_msg form li input{
+            background: #fff;
+        }
+        .child_msg form li select{
+            -moz-appearance: none;
+            -webkit-appearance:none;
+            appearance:none;
+            width: 50px;
+            border:none;
+            color: #545454;
+
+        }
+        .del_child:hover{
+            color: #FF0000;
+        }
+        .set_child{
+            background: #fff;
+        }
+        .photo_box{
+            position: relative;
+        }
+        .photo_box input{
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<header class="headerBox">
+    <div class="top_box">
+        <!-- 页头左侧部分-->
+        <ul class="city lt">
+            <li>所在城市：</li>
+            <li ><a href="#" class="current_city">南通</a></li>
+            <li><a href="#"><img src="images/head/position.png" /></a></li>
+        </ul>
+       <!-- 页头右侧部分-->
+       <p class="rt">
+           <a href="#">退出</a>
+       </p>
+    </div>
+    <!--logo-->
+    <div class="logo_box">
+        <div class="Subtab">
+            <a href="index.html" class="lt"><img src="images/logo.png" alt=""></a>
+            <!--控制台-->
+            <div class="console">
+                <!---->
+                <ul class="lt">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="user_set">
+                        <a>账户设置</a>
+                        <ul class="drop_down">
+                             <li><a href="set.html">修改设置</a></li>
+                            <li><a href="changePassword.html">修改密码</a></li>
+                        </ul>
+                    </li>
+                    <li class="message"><a href="message.html">消息 <span>22</span></a></li>
+                </ul>
+                <!--<form action="" class="seek">-->
+                    <!--<input type="text" placeholder="天门山3日游">-->
+                    <!--<button>搜索</button>-->
+                <!--</form>-->
+            </div>
+        </div>
+    </div>
+ </header>
+
+<section id="meOrder">
+    <div class="HeadPortrait">
+        <p>
+            昵称：<span class="petName">生命之谜</span>
+            我的积分：<span class="integral">5506</span>
+        </p>
+        <img src="images/bg_head_images.png" alt="">
+        <img src="images/head_images.png" alt="" class="head_images">
+    </div>
+    <ul class="my_order">
+        <h6>我的订单</h6>
+        <li class="tabs_active">
+            <a href="#pay_order">待付款订单</a>
+        </li>
+        <li >
+            <a href="#trip_order">未出行订单</a>
+        </li>
+        <li >
+            <a href="#appraise_order">待评价订单</a>
+        </li>
+        <li >
+            <a href="#finish_order">已完成订单</a>
+        </li>
+        <h6>我的社区</h6>
+        <li >
+            <a href="#me_collect">我的收藏</a>
+        </li>
+        <li >
+            <a href="#going_out">我的出行人</a>
+        </li>
+        <!--<li >
+            <a href="#me_honor">我的荣誉</a>
+        </li>-->
+        <li>
+            <a href="#child_grow_up">孩子成长</a>
+        </li>
+    </ul>
+    <div class="page_all">
+        <!--代付款-->
+        <div id="pay_order" class="active_pages" >
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li>开始时间：<span class="start_time">2016/10/10 </span><span  class="specific_time">09:00</span></li>
+                    <li>活动人数：<span>2</span>成人<span>2</span>儿童</li>
+                    <li>活动景区：北京市及周边地市风景区</li>
+                </ul>
+                <a href="#" class="promptly">立即支付</a>
+                <a href="#" class="cancel">取消订单</a>
+            </div>
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li>开始时间：<span class="start_time">2016/10/10 </span><span  class="specific_time">09:00</span></li>
+                    <li>活动人数：<span>2</span>成人<span>2</span>儿童</li>
+                    <li>活动景区：北京市及周边地市风景区</li>
+                </ul>
+                <a href="#" class="promptly">立即支付</a>
+                <a href="#" class="cancel">取消订单</a>
+            </div>
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li>开始时间：<span class="start_time">2016/10/10 </span><span  class="specific_time">09:00</span></li>
+                    <li>活动人数：<span>2</span>成人<span>2</span>儿童</li>
+                    <li>活动景区：北京市及周边地市风景区</li>
+                </ul>
+                <a href="#" class="promptly">立即支付</a>
+                <a href="#" class="cancel">取消订单</a>
+            </div>
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li>开始时间：<span class="start_time">2016/10/10 </span><span  class="specific_time">09:00</span></li>
+                    <li>活动人数：<span>2</span>成人<span>2</span>儿童</li>
+                    <li>活动景区：北京市及周边地市风景区</li>
+                </ul>
+                <a href="#" class="promptly">立即支付</a>
+                <a href="#" class="cancel">取消订单</a>
+            </div>
+            <div class="paging">
+                <ul class="page rt">
+                    <li><a href="#" class="first_page">首页</a></li>
+                    <li><a href="#" class="upPage">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li>……</li>
+                    <li><a href="#">17</a></li>
+                    <li><a href="#" class="downPage"> 下一页</a></li>
+                    <li><a href="#" class="last_page">末页</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--未出行-->
+        <div id="trip_order">
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li>开始时间：<span class="start_time">2016/11/30 </span><span  class="specific_time">09:00</span></li>
+                    <li>活动人数：<span>2</span>成人<span>2</span>儿童</li>
+                    <li>活动景区：北京市及周边地市风景区</li>
+                </ul>
+               <p class="lt">
+                   距离出行日期还有：<span class="day">08</span>天<span class="hour">18</span>小时<span class="minute">24</span>分
+                   <p class="rt">已付款：￥<span class="money">1244</span></p>
+               </p>
+            </div>
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li>开始时间：<span class="start_time">2016/10/10 </span><span  class="specific_time">09:00</span></li>
+                    <li>活动人数：<span>2</span>成人<span>2</span>儿童</li>
+                    <li>活动景区：北京市及周边地市风景区</li>
+                </ul>
+                <p class="lt">
+                    距离出行日期还有：<span class="day">08</span>天<span class="hour">18</span>小时<span class="minute">24</span>分
+                <p class="rt">已付款：￥<span class="money">1244</span></p>
+                </p>
+            </div>
+            <!--分页-->
+            <div class="paging">
+                <ul class="page rt">
+                    <li><a href="#" class="first_page">首页</a></li>
+                    <li><a href="#" class="upPage">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li>……</li>
+                    <li><a href="#">17</a></li>
+                    <li><a href="#" class="downPage"> 下一页</a></li>
+                    <li><a href="#" class="last_page">末页</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--待评价-->
+        <div id="appraise_order">
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li><span class="end">活动已结束</span></li>
+
+                </ul>
+                <p class="rt">
+                    <a href="evaluate.html">立即评价</a>
+                </p>
+            </div>
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li><span class="end">活动已结束</span></li>
+
+                </ul>
+                <p class="rt">
+                    <a href="evaluate.html">立即评价</a>
+                </p>
+            </div>
+            <!--分页-->
+            <div class="paging">
+                <ul class="page rt">
+                    <li><a href="#" class="first_page">首页</a></li>
+                    <li><a href="#" class="upPage">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li>……</li>
+                    <li><a href="#">17</a></li>
+                    <li><a href="#" class="downPage"> 下一页</a></li>
+                    <li><a href="#" class="last_page">末页</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--完成-->
+        <div id="finish_order">
+            <p class="page_top">
+                <span class="OrdersTime">下单时间：<span>2106/09/01</span></span>
+                <span class="OrdersNum">订单编号：<span>622158791586</span></span>
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">[零距离国庆家庭游]游北京 听古城给你讲故事（活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span>）</li>
+                    <li><span class="end">活动已结束</span></li>
+
+                </ul>
+                <p class="rt">
+                    <a href="#">修改评价</a>
+                </p>
+            </div>
+            <!--分页-->
+            <div class="paging">
+                <ul class="page rt">
+                    <li><a href="#" class="first_page">首页</a></li>
+                    <li><a href="#" class="upPage">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li>……</li>
+                    <li><a href="#">17</a></li>
+                    <li><a href="#" class="downPage"> 下一页</a></li>
+                    <li><a href="#" class="last_page">末页</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--收藏-->
+        <div id="me_collect">
+            <p class="page_top">
+                <!--<span class="OrdersTime">下单时间：<span>2106/09/01</span></span>-->
+                <!--<span class="OrdersNum">订单编号：<span>622158791586</span></span>-->
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span></li>
+                    <li>活动景区：北京市及周边地市风景区</li>
+                    <li>￥<span class="lowest">1380</span>元起</li>
+
+                </ul>
+                <a href="#" class="check">查看详情</a>
+                <a href="#" class="deselect">取消收藏</a>
+            </div>
+            <p class="page_top">
+                <!--<span class="OrdersTime">下单时间：<span>2106/09/01</span></span>-->
+                <!--<span class="OrdersNum">订单编号：<span>622158791586</span></span>-->
+            </p>
+            <div class="page_box">
+                <ul>
+                    <li class="img_box"><img src="images/images_photo.png" alt=""></li>
+                    <li class="photo">活动时间：<span>10/01-09:00</span>~<span>10/03-17:00</span></li>
+                    <li>活动景区：北京市及周边地市风景区</li>
+                    <li>￥<span class="lowest">1380</span>元起</li>
+
+                </ul>
+                <a href="#" class="check">查看详情</a>
+                <a href="#" class="deselect">取消收藏</a>
+            </div>
+            <div class="paging">
+                <ul class="page rt">
+                    <li><a href="#" class="first_page">首页</a></li>
+                    <li><a href="#" class="upPage">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li>……</li>
+                    <li><a href="#">17</a></li>
+                    <li><a href="#" class="downPage"> 下一页</a></li>
+                    <li><a href="#" class="last_page">末页</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--出行人-->
+        <div id="going_out">
+            <!--接收-->
+            <form action="#" id="receive" >
+                <div class="receive_box">
+                    <ul class="user_data_text">
+                        <li>姓名</li>
+                        <li>性别</li>
+                        <li>出生日期</li>
+                        <li>身份证号</li>
+                    </ul>
+                    <ul class="user_data">
+                        <li>
+                            <!--<span>马哲</span>-->
+                            <input type="text" value="马哲" disabled>
+
+                        </li>
+                        <li>
+                            <!--<span>男</span>-->
+                            <!--<input type="text" value="女">-->
+                            <select name="sex" id="" disabled>
+                                <option value="">男</option>
+                                <option value="">女</option>
+                            </select>
+                        </li>
+                        <li>
+                            <!--<span>1994/04/22</span>-->
+                            <input type="text" value="1994/06/22" disabled>
+                        </li>
+                        <li>
+                            <!--<span>410222199907088523</span>-->
+                            <input type="text" name="id" value="410222199907088523" disabled>
+                        </li>
+                        <!--<input type="submit" class="alter" value="修改">-->
+                        <button type="submit" class="alter">修改</button>
+                        <!--<input type="submit" class="del" value="删除">-->
+                        <a href="#"  class="del" >删除</a>
+                    </ul>
+                </div>
+            </form>
+
+            <form action="#" id="send">
+                <div class="send_box">
+                    <ul class="user_data_text">
+                        <li>姓名</li>
+                        <li>性别</li>
+                        <li>出生日期</li>
+                        <li>身份证号</li>
+                    </ul>
+                    <ul class="user_data_content">
+                        <li><input type="text" class="client_name"></li>
+                        <li>
+                            <div data-role="fieldcontain" class="demo-cont" >
+                                <select name="性别" class="demo_select" data-role="none">
+                                    <option value="0">请选择性别</option>
+                                    <option value="1" selected="selected">男</option>
+                                    <option value="2">女</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <!--插件-->
+                            <div data-role="fieldcontain" class="demo-cont">
+                                <input type="text" class="demo_date"  placeholder="2016/10/13" />
+                            </div>
+                        </li>
+                        <li><input type="text" placeholder="请输入证件号" class="credentials"></li>
+                        <input type="submit" value="取消" class="abolish" onclick="dele(this)">
+                        <input type="submit" value="提交" class="put_in" >
+                    </ul>
+                </div>
+                <!--<input type="submit" value="新增出行人" id="add_user">-->
+            </form>
+            <a href="#" id="add_user">新增出行人</a>
+        </div>
+        <!--我的荣誉-->
+        <!--<div id="me_honor">
+            <div class="honors_classes">
+                <dl>
+                    <dd class="trophy"><img src="images/trophy.png" alt=""></dd>
+                    <dt class="various">XX荣誉勋章</dt>
+                    <dt>获得日期：<span class="gained_date">2016/11/11</span></dt>
+                </dl>
+            </div>
+            <div class="honors_classes">
+                <dl>
+                    <dd class="trophy"><img src="images/trophy.png" alt=""></dd>
+                    <dt class="various">XX荣誉勋章</dt>
+                    <dt>获得日期：<span class="gained_date">2016/11/11</span></dt>
+                </dl>
+            </div>
+            <div class="honors_classes">
+                <dl>
+                    <dd class="trophy"><img src="images/trophy.png" alt=""></dd>
+                    <dt class="various">XX荣誉勋章</dt>
+                    <dt>获得日期：<span class="gained_date">2016/11/11</span></dt>
+                </dl>
+            </div>
+            <div class="honors_classes">
+                <dl>
+                    <dd class="trophy"><img src="images/trophy.png" alt=""></dd>
+                    <dt class="various">XX荣誉勋章</dt>
+                    <dt>获得日期：<span class="gained_date">2016/11/11</span></dt>
+                </dl>
+            </div>
+            <div class="honors_classes">
+                <dl>
+                    <dd class="trophy"><img src="images/trophy.png" alt=""></dd>
+                    <dt class="various">XX荣誉勋章</dt>
+                    <dt>获得日期：<span class="gained_date">2016/11/11</span></dt>
+                </dl>
+            </div>
+            <div class="honors_classes">
+                <dl>
+                    <dd class="trophy"><img src="images/trophy.png" alt=""></dd>
+                    <dt class="various">XX荣誉勋章</dt>
+                    <dt>获得日期：<span class="gained_date">2016/11/11</span></dt>
+                </dl>
+            </div>
+            <div class="honors_classes">
+                <dl>
+                    <dd class="trophy"><img src="images/trophy.png" alt=""></dd>
+                    <dt class="various">XX荣誉勋章</dt>
+                    <dt>获得日期：<span class="gained_date">2016/11/11</span></dt>
+                </dl>
+            </div>
+
+        </div>-->
+        <!--孩子成长-->
+        <div id="child_grow_up" >
+            <div class="child_data_box">
+                <div class="child_medal">
+                    <div>
+                        <!--资料-->
+                         <ul class="child_msg">
+                                <form action="">
+                                    <li class="photo_box" id="preview">
+                                        <img src="images/child.png" alt="">
+                                        <!--<input type="file" class="photo" >-->
+                                        <input type="file" class="photo" onchange="previewImage(this)" disabled>
+                                    </li>
+                                    <li>姓名：
+                                        <input type="text" value="大友克洋" disabled>
+                                    </li>
+                                    <li>性别：
+                                        <select name="" disabled >
+                                            <option value="">男</option>
+                                            <option value="">女</option>
+                                        </select>
+
+                                    </li>
+                                    <li>学校：<input type="text" value="北京市第四中学" disabled></li>
+                                    <!--<input type="submit" class="del_child" value="删除">-->
+                                    <a href="#" class="del_child">删除</a>
+                                    <input type="submit" class="set_child" value="修改" >
+                                </form>
+                            </ul>
+                        <!--勋章-->
+                        <div class="child_medal_box">
+                        <p>童军级别：
+                            <span class="rank" >一级童军</span>   童军徽章：<span class="medal_num">2</span>个
+                        </p>
+                        <div class="decoration" >
+                            <p class="site">千湖岛生存夏令营</p>
+
+                            <ul>
+                                <li>队名：啦啦啦</li>
+                                <li>担任职务：小队长</li>
+                                <li>小队口号：坚持不懈 突破自我</li>
+                                <li>个人简评：个人简评个人简评个人简评个人简评</li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!--底部信息-->
+            <div id="root_box">
+                <div class="textbox">
+                    <p class="bg_text">
+                            每个活动见证着孩子的自我成长</br>
+                          童军荣誉成为孩子内在的成长的驱动力
+                        </ul>
+                    </p>
+                    <ul>
+                        <li> 我们打造中国特色的童军训练体系</li>
+                        <li> 我们遵循教育的自然性，释放孩子的无线潜能</li>
+                        <li> 我们激发保护孩子好奇心，培养独立自强，面向未来公民意识</li>
+                    </ul>
+                </div>
+                <div class="textbox" style="margin: 0 28px">
+                    <p class="bg_text1">
+                        每个活动见证着孩子的自我成长</br>
+                        童军荣誉成为孩子内在的成长的驱动力
+                        </ul>
+                    </p>
+                    <ul>
+                        <li> 我们打造中国特色的童军训练体系</li>
+                        <li> 我们遵循教育的自然性，释放孩子的无线潜能</li>
+                        <li> 我们激发保护孩子好奇心，培养独立自强，面向未来公民意识</li>
+                    </ul>
+                </div>
+                <div class="textbox">
+                    <p class="bg_text2">
+                        每个活动见证着孩子的自我成长</br>
+                        童军荣誉成为孩子内在的成长的驱动力
+                        </ul>
+                    </p>
+                    <ul>
+                        <li> 我们打造中国特色的童军训练体系</li>
+                        <li> 我们遵循教育的自然性，释放孩子的无线潜能</li>
+                        <li> 我们激发保护孩子好奇心，培养独立自强，面向未来公民意识</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页脚-->
+<div id="footer"></div>
+<script src="js/jquery-1.11.3.js"></script>
+
+<script src="js/date.js"></script>
+
+<script src="js/mobiscroll.custom-2.16.1.min.js" type="text/javascript"></script>
+<script>
+    <!--添加出行人-->
+    $('#going_out').on("click","#add_user",function(e){
+        e.preventDefault();
+        var html='<div class="send_box">'+
+                '<ul class="user_data_text">'+
+                    '<li>姓名</li>'+
+                    '<li>性别</li>'+
+                    ' <li>出生日期</li>'+
+                    '<li>身份证号</li>'+
+                '</ul>'+
+                ' <ul class="user_data_content">'+
+                    ' <li><input type="text" class="client_name"></li>'+
+                    '<li>'+
+                    '<div data-role="fieldcontain" class="demo-cont" >'+
+                    '<select name="性别" class="demo_select" data-role="none">'+
+                    '<option value="0">请选择性别</option>'+
+                    '<option value="1" selected="selected">男</option>'+
+                    '<option value="2">女</option>'+
+                    '</select>'+
+                    '</div>'+
+                    '</li>'+
+                    '<li>'+
+                        // <!--插件-->
+                    '<div data-role="fieldcontain" class="demo-cont">'+
+                    '<input type="text" class="demo_date"   placeholder="2016/10/13" />'+
+                    '</div>'+
+                    '</li>'+
+                    '<li><input type="text" placeholder="请输入证件号" class="credentials"></li>'+
+                    '<input type="submit" value="取消" class="abolish" onclick="dele(this)"/>'+
+                    '<input type="submit" value="提交" class="put_in">'+
+                '</ul>'+
+                '</div>';
+        //新添加的dom没有执行上边调用插件的代码；
+        $(html).appendTo("#send");
+        init();
+    });
+    //   点击取消 删除当前行
+    function dele(btn){
+        $(btn).parent().parent().remove();
+    };
+    // $(function () {
+    function init() {
+        // Select demo initialization  demo_select
+        $('.demo_select').mobiscroll().select({
+            theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default
+            mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default
+            display: display, // Specify display mode like: display: 'bottom' or omit setting to use default
+            lang: lang        // Specify language like: lang: 'pl' or omit setting to use default
+        });
+
+        // Date demo initialization
+        $('.demo_date').mobiscroll().date({
+            theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default
+            mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default
+            display: display, // Specify display mode like: display: 'bottom' or omit setting to use default
+            lang: lang        // Specify language like: lang: 'pl' or omit setting to use default
+        });
+
+    }
+
+    var demo, theme, mode, display, lang;
+
+    theme = "bootstrap",
+            lang = "zh";
+    $(".demo_cont_" + demo).show();
+    init();
+
+    $(".alter").on("click",function(){
+        if(this.html="修改"){
+            $(".user_data li input").removeAttr("disabled");
+           $(".user_data li select").removeAttr("disabled");
+            $(this).html("保存");
+            return false;
+        }
+    });
+    $(".set_child").on("click",function(){
+        if(this.html="修改"){
+            $(".child_msg li input").removeAttr("disabled");
+            $(".child_msg li input").css("border","1px solid #ddd");
+            $(".child_msg li select").removeAttr("disabled");
+            $(".photo").removeAttr("disabled");
+            $(".child_msg li select").css("border","1px solid #ddd").css("color","#333");
+            $(this).html("保存");
+            return false;
+        }
+    });
+</script>
+<script type="text/javascript">
+    //图片上传预览    IE是用了滤镜。
+    function previewImage(file){
+        var MAXWIDTH  = 140;
+        var MAXHEIGHT = 140;
+        var div = document.getElementById('preview');
+        console.log(div);
+        if (file.files && file.files[0])
+        {
+            div.innerHTML ='<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+            }
+            var reader = new FileReader();
+            reader.onload = function(evt){img.src = evt.target.result;}
+            reader.readAsDataURL(file.files[0]);
+        }
+        else //兼容IE
+        {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+        }
+    }
+    function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+        var param = {top:0, left:0, width:width, height:height};
+        if( width>maxWidth || height>maxHeight ){
+            rateWidth = width / maxWidth;
+            rateHeight = height / maxHeight;
+            if( rateWidth > rateHeight ){
+                param.width =  maxWidth;
+                param.height = Math.round(height / rateWidth);
+            }else{
+                param.width = Math.round(width / rateHeight);
+                param.height = maxHeight;
+            }
+        }
+        param.left = Math.round((maxWidth - param.width) / 2);
+        param.top = Math.round((maxHeight - param.height) / 2);
+        return param;
+    }
+</script>
+</body>
+</html>                                

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/myhomepage.css">
+    <style>
+        #WeChat_pay{
+            width: 350px;
+            height: 400px;
+            background: #fff;
+            border: 1px solid #fff;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            position: absolute;
+            top: 154px;
+            left: 38%;
+            -webkit-box-shadow: 0 0 5px #eee;
+            -moz-box-shadow: 0 0 5px #eee;
+            box-shadow: 0 0 5px #eee;
+        }
+        #WeChat_pay p {
+            height: 100px;
+            width: 100%;
+            line-height: 100px;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+        }
+        #WeChat_pay img {
+            margin-left: 48px;}
+    </style>
+
+</head>
+<body>
+     <!--登录顶部-->
+     <header class="headerBox">
+         <div class="top_box">
+             <!-- 页头左侧部分-->
+             <ul class="city lt">
+                 <li>所在城市：</li>
+                 <li ><a href="#" class="current_city">南通</a></li>
+                 <li><a href="#"><img src="images/head/position.png" /></a></li>
+             </ul>
+             <!-- 页头右侧部分-->
+             <p class="rt">
+                 <a href="#">退出</a>
+             </p>
+         </div>
+         <!--logo-->
+         <div class="logo_box">
+             <div class="Subtab">
+                 <a href="index.html" class="lt"><img src="images/logo.png" alt=""></a>
+                 <!--控制台-->
+                 <div class="console">
+                     <ul class="lt">
+                         <li><a href="index.html">首页</a></li>
+                         <li class="user_set">
+                             <a>账户设置</a>
+                             <ul class="drop_down">
+                                 <li><a href="set.html">修改设置</a></li>
+                                 <li><a href="changePassword.html">修改密码</a></li>
+                             </ul>
+                         </li>
+                         <li class="message"><a href="#">消息 <span>22</span></a></li>
+                     </ul>
+                     <!--<form action="" class="seek">-->
+                         <!--<input type="text" placeholder="天门山3日游">-->
+                         <!--<button>搜索</button>-->
+                     <!--</form>-->
+                 </div>
+             </div>
+         </div>
+     </header>
+     <!--主体-->
+    <section id="WeChat">
+        <!--背景图-->
+        <img src="images/login/bg_login.png" alt="" >
+        <div id="WeChat_pay">
+            <p>使用微信扫码支付</p>
+            <img src="images/login/bg_qr_code_big.png" alt="">
+        </div>
+
+    </section>
+    <footer id="loginFooter">
+            <p>零距离童军</p>
+            <p>互联网 + 教育 + 亲子体验&nbsp;&nbsp;将迎来孩子教育的新时代</p>
+            <p>教给孩子终身受用的生存技能和价值观，林距离体验课堂成教育新趋势</p>
+        <div class="foot">
+            <!-- 二维码-->
+            <img src="images/foot/Qr-code.png" alt=""/>
+            <!-- 咨询热线-->
+            <span>咨询热线：0513-85221106</span>
+            <!-- 备案号-->
+            <p>Copyright©2016 零距离童军 All Rights Reserved 粤ICP备16004714号</p>
+        </div>
+    </footer>
+
+</body>
+</html>

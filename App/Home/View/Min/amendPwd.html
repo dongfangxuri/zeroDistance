@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>修改密码</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no,maximum-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="__PUBLIC__/pintuer/pintuer.css">
+    <style>
+        body{
+            background: #f7f7f7;
+
+        }
+        input[ name="password"]{
+            width: 70%;
+            margin: 0 auto;
+            padding-left:6%;
+            background: url(__PUBLIC__/images/password.png) no-repeat 3px 4px ;
+            background-size:18px;
+        }
+        .input-help{
+            list-style: none;
+            padding-left: 20%;
+        }
+        .cz{
+            width: 70%;
+            margin: 0 auto;
+            background:#FC9A03 ;
+
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <form action="#default.html" method="post">
+        <div class="panel"  style="width:100%;text-align: left;">
+            <div class="text-center margin-bottom">
+                <a href="#"><img src="" alt=""></a>
+                <h1 class="padding genggaipwd">更改密码</h1>
+            </div>
+            <div class="" >
+                <div class="form-group">
+                    <div class="field field-icon-right">
+                        <input type="password" class="input" name="password" placeholder="新密码" maxlength="32" data-validate="required:请填写新密码,length#>=8:密码长度不符合要求" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="field field-icon-right">
+                        <input type="password" class="input" name="password" placeholder="确认密码" maxlength="32" data-validate="required:请填写确认新密码,length#>=8:密码长度不符合要求" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="field">
+                        <button class="button button-block bg-main text-big cz">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<script src="__PUBLIC__/pintuer/jquery.js"></script>
+<script src="__PUBLIC__/pintuer/pintuer.js"></script>
+</body>
+</html>

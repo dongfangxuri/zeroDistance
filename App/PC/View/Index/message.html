@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="__PUBLIC__/pc/css/mobiscroll.custom-2.16.1.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/myhomepage.css">
+    <style>
+        /*<!--主体-->*/
+        #system_msge{
+            width: 1200px;margin: 0 auto;
+            min-height: 300px;
+            padding-top: 50px;
+            overflow: hidden;
+        }
+        /*标签页ul*/
+        #system_msge .my_order{
+            width: 260px;
+            min-height: 480px;
+            background: #fff;
+        }
+        /*标签页主体*/
+        #system_msge .page_all{
+            width: 930px;
+            min-height: 670px;
+        }
+        /*标签页的li*/
+        #system_msge .my_order>li{
+            width: 100%;
+            height: 50px;
+            padding: 5px  0 0 10px;
+        }
+        /*默认样式*/
+        #system_msge .my_order li.tabs_active a{
+            color: #4C4D4E;
+        }
+        #system_msge .my_order li.tabs_active{
+            background: #D0D3D9;
+            color: #4C4D4E;
+        }
+        /*系统消息*/
+        ul.all_mase{
+            float:right;
+            text-align: left;
+            width: 207px;
+        }
+        /*系统消息 li 里的内容*/
+        ul.all_mase li{
+            margin: 0;
+            padding: 0;
+            color:#333;
+            height: 18px;
+        }
+        ul.all_mase li span{
+            font-size: 12px;
+            color: #808080;
+        }
+        ul.all_mase li span b{
+        float: right;
+           width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: red;
+            margin: 6px 35px 0 0;
+        }
+        img.img{
+           width: 30px;
+            height: 30px;
+            margin-top: 5px;
+        }
+        /*详细信息*/
+        .detailed{
+            width: 900px;
+            height: 70px;
+            margin: 10px 15px 15px;
+            background: #E9ECF2;
+            border-radius: 3px;
+            padding: 5px 10px ;
+        }
+        .detailed p{
+            min-height: 36px;
+            line-height: 36px;
+            border-bottom:1px dashed#fff;
+        }
+        .detailed a{
+            float: right;
+            margin-top: 5px;
+            color:#0D5DFE ;
+        }
+        .detailed a:hover{
+            color:#0D5DFE ;
+        }
+        /*f分页定位*/
+        #systematic,#Coupon{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<header class="headerBox">
+    <div class="top_box">
+        <!-- 页头左侧部分-->
+        <ul class="city lt">
+            <li>所在城市：</li>
+            <li ><a href="#" class="current_city">南通</a></li>
+            <li><a href="#"><img src="__PUBLIC__/pc/images/head/position.png" /></a></li>
+        </ul>
+       <!-- 页头右侧部分-->
+       <p class="rt">
+           <a href="#">退出</a>
+       </p>
+
+    </div>
+    <!--logo-->
+    <div class="logo_box">
+        <div class="Subtab">
+            <a href="index.html" class="lt"><img src="__PUBLIC__/pc/images/logo.png" alt=""></a>
+            <!--控制台-->
+            <div class="console">
+                <ul class="lt">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="user_set">
+                        <a>账户设置</a>
+                        <ul class="drop_down">
+                             <li><a href="set.html">修改设置</a></li>
+                            <li><a href="changePassword.html">修改密码</a></li>
+                        </ul>
+                    </li>
+                    <li class="message"><a href="#">消息 <span>22</span></a></li>
+                </ul>
+                <form action="" class="seek">
+                    <input type="text" placeholder="天门山3日游">
+                    <button>搜索</button>
+                </form>
+            </div>
+        </div>
+    </div>
+ </header>
+<section id="system_msge">
+    <ul class="my_order">
+        <li class="tabs_active">
+            <a href="#systematic">
+                <img src="__PUBLIC__/pc/images/bg_message_xt.png" alt="" class="img">
+                <ul class="all_mase">
+                    <li>系统消息</li>
+                    <li><span>无系统消息<b></b></span> </li>
+                </ul>
+            </a>
+        </li>
+        <li >
+            <a href="#Coupon">
+                <img src="__PUBLIC__/pc/images/bg_message_yh.png" alt="" class="img">
+                <ul class="all_mase">
+                    <li>优惠活动</li>
+                    <li><span>17条未读信息<b></b></span></li>
+                </ul>
+            </a>
+        </li>
+    </ul>
+    <div class="page_all">
+        <!--系统消息-->
+        <div id="systematic" class="active_pages">
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+
+        </div>
+        <!--优惠活动-->
+        <div id="Coupon">
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+            <div class="detailed">
+                <p>九寨沟国庆消暑游最低7折预售开始</p>
+                <a href="#">详情信息 >></a>
+            </div>
+
+        </div>
+        <div class="paging" style="display: block">
+            <ul class="page rt">
+                <li><a href="#" class="first_page">首页</a></li>
+                <li><a href="#" class="upPage">上一页</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li>……</li>
+                <li><a href="#">17</a></li>
+                <li><a href="#" class="downPage"> 下一页</a></li>
+                <li><a href="#" class="last_page">末页</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--页脚-->
+<div id="footer"></div>
+<script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=iNRD8iIAjCuobjHgg72ukB5ghbKpsaj4"></script>
+<script>
+    $(document).ready(function() {
+        $("#footer").load("footer.html");
+    });
+    //通过IP地址获取城市名称
+    $(function() {
+        function getadress() {
+            var geolocation = new BMap.Geolocation();
+            geolocation.getCurrentPosition(function (r) {   //定位结果对象会传递给r变量
+                if (this.getStatus() == BMAP_STATUS_SUCCESS) {  //通过Geolocation类的getStatus()可以判断是否成功定位。
+                    var myGeo = new BMap.Geocoder();
+                    // 根据坐标得到地址描述
+                    myGeo.getLocation(new BMap.Point(r.point.lng, r.point.lat), function (result) {
+                        if (result) {
+                            var address = result.addressComponents.city.replace(/市/g, "");
+                            $(".current_city").html(address);
+
+                        }
+                    });
+                }
+                else {
+                    alert('failed' + this.getStatus());
+                }
+            }, {enableHighAccuracy: true});
+        }
+        getadress();
+    });
+    $('.my_order li a ').click(function(e){
+        e.preventDefault();
+        //被点击a的父元素li添加.active
+        $(this).parent().addClass('tabs_active').siblings('.tabs_active').removeClass('tabs_active');
+        //获取a的href属性值
+        var h = $(this).attr('href');
+        //根据ID选择器选中要操作的div
+        $(h).addClass('active_pages').siblings('.active_pages').removeClass('active_pages');
+    });
+    $(".user_set").on("mouseover",function(){
+        $(".drop_down").show();
+    }).on("mouseout",function(){
+        $(".drop_down").hide();
+    });
+
+</script>
+</body>
+</html>                                

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>零距离童军-文章</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/start.css">
+    <style>
+        #essay_main{
+            width: 1200px;
+            margin: 0 auto;
+            min-height: 700px;
+        }
+        /*面包屑*/
+        #essay_main .home div a span{
+            font-size: 18px;
+        }
+        #essay_main .home div:last-child>a{
+            font-size: 18px;
+        }
+        /*标题*/
+        .text_title{
+            width: 100%;
+            text-align: center;
+            color: #333333;
+            font-size: 18px;
+            font-weight: bold;
+            padding:10px  0;
+        }
+        /*作者 发布时间*/
+        #essay_main ul{
+            overflow: hidden;
+        }
+        .author,.issued{
+           float: left;
+            width:80%;
+            text-align: center;
+            color:#9C9C9C;
+            padding-left: 238px ;
+        }
+        .issued{
+            width:20%;
+            text-align: right;
+            padding-left: 0 ;
+        }
+        .essay_content{
+            margin: 10px 0 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--页面主体-->
+    <section  id="essay_main">
+        <!-- 首页-->
+        <div class="home">
+            <div><a href="index.html"><span>首页 </span></a>&gt; <a>文章中心</a></div>
+        </div>
+        <p class="text_title">{$model.title}</p>
+        <ul>
+            <li class="author">
+              作者：<span>{$model.author}</span>
+            </li>
+            <li class="issued">
+                发布于：<span>{$model.addTime}</span>
+            </li>
+        </ul>
+
+        <div class="essay_content">
+          {$model.content}
+        </div>
+    </section>
+    <!--页脚-->
+    <script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=iNRD8iIAjCuobjHgg72ukB5ghbKpsaj4"></script>
+    <script src="__PUBLIC__/pc/js/index.js"></script>
+    <script>
+        //-首页的切换
+        $($(".navRight li").delegate("a","click",function(e){
+            e.preventDefault();
+            $(this).addClass("HomePage").parent().siblings().children(".HomePage").removeClass("HomePage");
+        }));
+        //   选项的切换
+        $($(".destination .left li").delegate("a","click",function(e){
+            e.preventDefault();
+            $(this).addClass("sky").parent().siblings().children(".sky").removeClass("sky");
+           //$(".destination .left li a span input").attr("checked"); removeAttr(name)
+        }));
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+
+    </script>
+</body>
+</html>

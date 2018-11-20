@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>成长经历</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no,maximum-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="__PUBLIC__/pintuer/pintuer.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/swiper.min.css">
+    <!--<link rel="stylesheet" href="css/index.css">-->
+    <!--<link rel="stylesheet" href="css/detail.css">-->
+
+    <style>
+        ul,li{
+            list-style:none;
+        }
+        #experience>p:first-child{
+            background: #FC9A03;
+            font-size: 4rem;
+            height: 13rem;
+            padding: 0 3rem;
+            line-height: 13rem;
+            margin: 0;
+            overflow: hidden;
+        }
+        #experience p img{
+            margin-right: 2.2rem;
+        }
+        .photo img{
+            margin-bottom: 0.6rem;
+            width: 181px;
+            height: 199px;
+        }
+        .photo span{
+            font-size: 2rem;
+            color:#000;
+            font-weight: bold;
+            margin-left: 1.6rem;
+        }
+        .data_list{
+            padding: 1rem 0 0 2rem;
+            font-size: 2rem;
+            color: #000;
+        }
+        #childName{
+                background: #fff;
+                border: none;
+                width:10rem;
+                font-size: 2rem;
+        }
+        #childSex{
+            background: #fff;
+            border: none;
+            width:9rem;
+            font-size: 2rem;
+        }
+        #childSchool{
+            background: #fff;
+            margin-top: 3rem;
+            border: none;
+            /*width:9rem;*/
+            font-size: 2rem;
+        }
+        input[type="button" ]{
+            display: block;
+            margin-top: 5rem;
+            margin-left: 8rem;
+            color: #000;
+            font-size: 1.6rem;
+            background: #fff;
+            border:none;
+        }
+        #experience .me{
+            background: #FC9A03;
+            font-size:2.4rem;
+            padding: 0.3rem 0;
+            margin: 0;
+            height: 4rem;
+            line-height:3rem;
+        }
+        #experience .me img{
+            display: inline;
+        }
+        .meGrade .x3{
+            font-size: 2rem;
+            color: #FC9A03;
+            height:5rem;
+            line-height:5rem;
+        }
+        .meGrade .x9{
+            height:5rem;
+            line-height:5rem;
+            color: #000;
+            font-size: 2rem;
+        }
+        .meGrade .x9 img{
+            display: inline-block;
+            margin-bottom: 0.6rem;
+        	width: 3.2rem;
+            height: 4rem;
+        }
+        .meGrade .x9 a{
+            float: right;
+        margin-right: 2rem;
+            color:#3441F6;
+        }
+        .been li{
+            border-bottom: 1px solid#E4E4E4;
+            padding: 0.3rem 4rem 0.3rem 2rem;
+            line-height: 127px;
+
+        }
+        .been li>img{
+            width: 127px;
+            height: 127px;
+            border-radius:50%;
+            display: inline-block;
+            margin-right: 2rem;
+        }
+        .been li a{
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .been li a img{
+            margin-right:3rem;
+            margin-top: 3rem;
+        }
+        .photo{
+            position: relative;
+        }
+        .photo input{
+            width: 180px;
+            height: 200px;
+            position: absolute;
+            top:0rem;
+            left: 0rem;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<!--头部信息-->
+    <header class="layout header_box clearfix" >
+        <div class="line">
+            <a href="javascript:history.back(-1);" class="x2"><img src="__PUBLIC__/images/idex.png" alt="" class="img-responsive padding retreat"  style="width: 75%"> </a>
+            <p class="x8">
+                <img src="__PUBLIC__/images/logo.png" alt="" class="img-responsive x2  padding" style="width: 15%;padding-right: 0">
+                <img src="__PUBLIC__/images/ojltj.png" alt="" class="img-responsive x9 padding " style="width: 75%">
+            </p>
+            <a href="/Home/Min" class="x2"><img src="/{$usermodel.header_img}" alt="" class="img-responsive padding myhome" style="width: 75%;border-radius:50%;"></a>
+        </div>
+    </header>
+
+<!--主体内容-->
+    <section class="layout" id="experience">
+            <p class="text-white ">童子军成长经历 <img src="__PUBLIC__/images/bg_kid.png" alt="" class="img-responsive float-right"></p>
+            <div class="layout padding-big">
+                 
+                   <form action="__SELF__" id="formdata" method="post" enctype="multipart/form-data">
+                      <ul class="line">
+                      <li class="x3 photo">
+                          <input type="file" name="header_img" onchange="previewImage(this)" id="d1"/>
+                          <div id="preview">
+                          <empty name="header_img">
+                           <img src="__PUBLIC__/images/btn_photo.png" alt="" class="img-responsive" id="imghead">
+                           <else/>
+                            <img src="/{$header_img}" alt="" class="img-responsive" id="imghead">
+                           </empty>
+						  </div>
+						  <span > 孩子照片</span>
+                      </li>
+                      <li class="x9 data_list">
+                         
+                              <lenle>姓名</lenle>
+                              <input type="text" value="{$model.name}" name="childname" placeholder="填写孩子姓名" disabled="disabled" id="childName" >
+                              <lenle>性别</lenle>
+                              <input type="text" value="{$model.sex}"  name="childsex" placeholder="填写性别" disabled="disabled" id="childSex">
+                              <br>
+                              <lenle>学校名称</lenle>
+                              <input type="text" value="{$model.addr}" name="childaddr" placeholder="填写学校名称" disabled="disabled" id="childSchool">
+                              <input type="hidden" name="id" value="{$model.id}"/>
+                              <input type="button" id="save" value="修改">
+                          
+                      </li>
+                      </ul>
+                   </form>
+                  
+            </div>
+            <p class="me text-center text-white">
+                <img src="__PUBLIC__/images/bg_star_white.png" alt="" class="img-responsive">我的荣誉
+            </p>
+            <ul class="line meGrade">
+                <li class="x3 text-center border-bottom">童军级别</li>
+				<if condition="$norank eq 1">
+				 <li class="x9 border-bottom">暂无级别</li>
+				<else/>
+				<li class="x9 border-bottom">{$rank.remarks} <img src="/{$rank.pic}" alt="" class="img-responsive "></li>
+				</if>
+                  
+                <li class="x3 text-center">徽章枚数</li>
+                <li class="x9">
+                    <span class="huizhangNum">{$model.badge_number}</span>
+                    <a href="__CONTROLLER__/know" >了解童子军</a>
+                </li>
+            </ul>
+            <p class="me text-center text-white">
+                <img src="__PUBLIC__/images/bg_star_white.png" alt="" class="img-responsive">成长经历
+            </p>
+            <ul class="been">
+               <foreach name="activelist" item="vo">
+	                <li>
+	                    <img src="/{$vo.ac_img}" alt="" class="img-responsive">
+	                    <a href="/Home/Index/detail/ac_id/{$vo.ac_id}">{$vo.ac_title}
+	                        <img src="__PUBLIC__/images/right.png" alt="" class="float-right img-responsive">
+	                    </a>
+	                </li>
+                </foreach>
+            </ul>
+    </section>
+<div style="height:10rem">
+
+</div>
+<!--页脚-->
+    <!--<footer class="layout fixed-bottom  footer" style="position: fixed;bottom: 0">-->
+        <!--<div class="layout">-->
+        <!--<ul class="line footimg text-center" >-->
+            <!--<li class="x3"><a href="index.html"><img src="images/btn_kefu.png" class="img-responsive" >客服</a></li>-->
+            <!--<li class="x3"><a href="rili.html"><img src="images/btn_fenxiang.png" class="img-responsive" >分享 <span>+5</span></a></li>-->
+            <!--<li class="x6 "><a href="#jingxuan" class="xuanzetaocan text-center text-white">选择套餐</a></li>-->
+         <!--</ul>-->
+        <!--</div>-->
+
+    <!--</footer>-->
+<script src="__PUBLIC__/pintuer/jquery.js"></script>
+<script src="__PUBLIC__/pintuer/pintuer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/swiper.jquery.min.js"></script>
+<script src="__PUBLIC__/js/zepto1.js"></script>
+<script src="__PUBLIC__/js/sm1.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=iNRD8iIAjCuobjHgg72ukB5ghbKpsaj4"></script>
+<script src="__PUBLIC__/js/index.js"></script>
+<script>
+function previewImage(file)
+    {
+        var MAXWIDTH  = 180;
+        var MAXHEIGHT =200;
+        var div = document.getElementById('preview');
+        if (file.files && file.files[0])
+        {
+            div.innerHTML ='<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+            }
+            var reader = new FileReader();
+            reader.onload = function(evt){img.src = evt.target.result;}
+            reader.readAsDataURL(file.files[0]);
+        }
+        else //兼容IE
+        {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+        }
+    }
+    function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+        var param = {top:0, left:0, width:width, height:height};
+        if( width>maxWidth || height>maxHeight )
+        {
+            rateWidth = width / maxWidth;
+            rateHeight = height / maxHeight;
+
+            if( rateWidth > rateHeight )
+            {
+                param.width =  maxWidth;
+                param.height = Math.round(height / rateWidth);
+            }else
+            {
+                param.width = Math.round(width / rateHeight);
+                param.height = maxHeight;
+            }
+        }
+
+        param.left = Math.round((maxWidth - param.width) / 2);
+        param.top = Math.round((maxHeight - param.height) / 2);
+        return param;
+    }
+
+var inputs=$("form input");
+$("button[type='button']").click(function(){
+    $(inputs).removeAttr("disabled");
+    $("button[type='button']").html("保存");
+});
+$('#save').click(function(){
+	var val=$('#save').val();
+	if(val=='修改'){
+		var inputs=$("form input");
+		$(inputs).removeAttr("disabled");
+		$("#save").val("保存");
+	}
+	else
+	  {
+		 $("#formdata").submit();
+	  }
+	
+});
+
+</script>
+
+</body>
+</html>

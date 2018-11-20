@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>亲子旅游</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/start.css">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/detail.css">
+    <link href="__PUBLIC__/pc/css/rili.css" rel="stylesheet" />
+</head>
+<body>
+    <!--页头-->
+    <div id="header"></div>
+    <!--页面主体-->
+    <section  id="detail_main">
+        <div class="detail_main_bg">
+            <!--面包屑导航
+            <div class="bread-crumb">
+                <a href="#"><span>首页&nbsp;</span></a>
+            </div>
+             <!-- 搜索框
+            <form action="#" class="myForm">
+                <input type="search" placeholder="城市/景点/酒店" class="search_box"/>
+                <p></p>
+                <a href="#"> <img src="__PUBLIC__/pc/images/imgs/search.png" alt=""/></a>
+            </form> -->
+            <!--日历详情-->
+            <div id="detail_content">
+                <!--左侧-->
+                <div class="content_left" >
+                    <!--详情-->
+                    <div id="big_banner_wrap">
+                        <div id="big_banner_pic_wrap">
+                            <ul id="big_banner_pic">
+                                <li><img src="__PUBLIC__/pc/images/detail/bg_banner_index.png" /></li>
+                                <li><img src="__PUBLIC__/pc/images/detail/bg_banner_index_1.png" /></li>
+                                <li><img src="__PUBLIC__/pc/images/detail/bg_banner_index_2.png" /></li>
+                                <li><img src="__PUBLIC__/pc/images/detail/bg_banner_index_3.png" /></li>
+                            </ul>
+                        </div>
+                        <div id="big_banner_change_wrap">
+                            <div id="big_banner_change_prev"><a class="backward_disabled"><img src="__PUBLIC__/pc/images/detail/btn_arrow_left.png" alt=""></a></div>
+                            <div id="big_banner_change_next"> <a class="forward"><img src="__PUBLIC__/pc/images/detail/btn_arrow_right.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                    <!--日历-->
+                    <div id="menology">
+                        <!--日历-->
+                    </div>
+                </div>
+                <!--右侧-->
+                <div class="content_right">
+                    <!--顶部文本-->
+                    <div class="top_text">
+                        <p>[零距离两日亲子游]历史文化名城-北京两日游，与宝贝一起感受文化古都的魅力</p>
+                        <p><span>有长城、逛故宫，天坛，感受清华园，密云水库戏水</span></p>
+                    </div>
+                    <!--地区-->
+                    <div class="address">
+                          <ul>
+                              <li><img src="__PUBLIC__/pc/images/detail/icon_location_index.png" alt=""><span  class="icon_location">北京市</span></li>
+                              <li><img src="__PUBLIC__/pc/images/detail/icon_clock_index.png" alt=""><span class="icon_clock">10月1-2日/5-6日</span></li>
+                              <li><img src="__PUBLIC__/pc/images/detail/icon_age_index.png" alt=""><span class="icon_age">适合5-12周岁儿童，父母需陪同</span></li>
+                              <li><img src="__PUBLIC__/pc/images/detail/icon_free_index.png" alt=""><span class="icon_free">自由编辑行</span></li>
+                          </ul>
+                    </div>
+                    <!--天数-->
+                    <ul id="day">
+                        <li id="choose_day">
+                            <p>行程天数：</p>
+                            <div class="content">
+                                <a href="#" class="selected">
+                                    <span>2天1晚</span>
+                                    <b></b>
+                                </a>
+                                <a href="#">
+                                    <span>2天1晚</span>
+                                    <b></b>
+                                </a>
+                            </div>
+                        </li>
+                     </ul>
+                    <!--推荐原因-->
+                    <dl id="cause">
+                        <dt>推荐原因
+                               <if condition="$is eq 1">
+                                 <a href="#">已收藏</a>
+                               <else/>
+                               <a href="#">收藏活动</a>
+                               </if>
+                        </dt>
+                        <dd> 1.千年古都，人文气息浓重</dd>
+                        <dd> 2.故宫博物馆中华珍宝无数，学历史，品艺术</dd>
+                        <dd> 3.香山，长城等自然和人文景观密集</dd>
+                    </dl>
+                    <!--活动价格-->
+                    <div class="activity_price">
+                        <ul>
+                            <li><p>非周末活动价 :</p></li>
+                            <li><span>￥1380.00</span> 起</li>
+
+                        </ul>
+                        <ul class="activity_price0">
+                            <li><p>周末活动价 :</p></li>
+                            <li><span>￥980.00</span> 起</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--《左侧选择套餐活动详情》《右侧其他推荐》 -->
+            <div  id="container">
+                <!--标签页-->
+                <div class="container_left">
+                    <ul class="tab_top">
+                        <li class="active"><a href="#content1"><span>1</span>选择套餐</a></li>
+                        <li><a href="#content2"><span>2</span>选择出行人</a></li>
+                        <li><a href="#content3"><span>3</span>支付账单</a></li>
+                    </ul>
+                    <!--标签页主体 1-->
+                   <div  class="container_list">
+                        <div id="content1" style="overflow: hidden">
+                            <!--套餐-->
+                            <form id="mytaocan" action="#" method="POST" enctype="multipart/form-data">
+
+                                <ul class="assorted" >
+                                    <li>2成人1儿童</li>
+                                    <li><span>￥1080</span>/组</li>
+                                    <li>
+                                         <ul>
+                                             <li>
+                                                 <input type="button"  class="btn_reduce" >
+                                                 <input type="text" value="1" class="add_num">
+                                                 <input type="button" class="btn_add">
+                                             </li>
+                                         </ul>
+
+                                    </li>
+                                </ul>
+                                <ul class="assorted">
+                                    <li>1成人1儿童</li>
+                                    <li><span>￥880</span>/组</li>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <input type="button"  class="btn_reduce" >
+                                                <input type="text" value="1" class="add_num">
+                                                <input type="button" class="btn_add">
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                                <ul class="assorted ">
+                                    <li>1成人2儿童</li>
+                                    <li><span>￥1280</span>/组</li>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <input type="button"  class="btn_reduce" >
+                                                <input type="text" value="1" class="add_num">
+                                                <input type="button" class="btn_add">
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                                <ul class="assorted">
+                                    <li>1成人</li>
+                                    <li><span>￥680</span>/组</li>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <input type="button"  class="btn_reduce" >
+                                                <input type="text" value="1" class="add_num">
+                                                <input type="button" class="btn_add">
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                                <ul class="assorted">
+                                    <li>1儿童</li>
+                                    <li><span>￥780</span>/组</li>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <input type="button"  class="btn_reduce" >
+                                                <input type="text" value="1" class="add_num">
+                                                <input type="button" class="btn_add">
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="assorted">
+                                    <li>1.4以下儿童</li>
+                                    <li><span>￥480</span>/组</li>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <input type="button"  class="btn_reduce" >
+                                                <input type="text" value="1" class="add_num">
+                                                <input type="button" class="btn_add">
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                                <ul class="assorted">
+                                    <li>1.2米以下儿童</li>
+                                    <li><span>￥380</span>/组</li>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <input type="button"  class="btn_reduce" >
+                                                <input type="text" value="1" class="add_num">
+                                                <input type="button" class="btn_add">
+                                             </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <input type="submit" class="btn_mark_sure" value="确定">
+                            </form>
+                        </div>
+                       <!--标签页主体 2-->
+                       <div id="content2" style="display: none;overflow: hidden" >
+                            <p>您还需要选择：<span class="four">4</span>成人 <span class="two">2</span>儿童</p>
+                           <form action="">
+                               <div id="select_name">
+                                    <ul>
+                                        <li><b class="btn_choose_active"></b>马哲</li>
+                                        <li><b class="btn_choose"></b>马马哲哲</li>
+                                        <li><b class="btn_choose_active"></b>马哲</li>
+                                    </ul>
+                               </div>
+                               <!--添加出行人-->
+                               <dl class="add_person">
+                                   <dd>添加出行人</dd>
+                                   <dt>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text"></dt>
+                                   <dt>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<input type="text"></dt>
+                                   <dt>出生日期：<input type="text"></dt>
+                                   <dt>证件类型：<input type="text"></dt>
+                                   <dt>证件号码：<input type="text"></dt>
+                                   <input type="button" value="添加" class="btnAdd">
+                               </dl>
+                           </form>
+                        </div>
+                       <!--标签页主体 3-->
+                       <div id="content3" style="display: none;overflow: hidden">
+                           <p>您的总账账单为：￥<span>3480</span></p>
+                           <ul>
+                               <li>成人 X <span>4</span></li>
+                               <li>儿童 X <span>2</span></li>
+                           </ul>
+                           <div id="pay">
+                                <p class="caution"><b></b>您选择的人数不足</p>
+                               <a href="#">立即支付</a>
+                           </div>
+                       </div>
+                    </div>
+                    <!--活动详情  留言  游客评价-->
+                    <div id="activity_detail">
+                        <p class="text_color"><b></b><span>活动详情</span></p>
+                        <p class="text_content">
+                            北京是首批国家历史文化名城和世界上拥有世界文化遗产数最多的城市，三千多年的历史孕育了故宫、天坛、八达岭长城、颐和园等众多名胜古迹。早在七十万年前，北京周口店地区就出现了原始人群部落“北京人”。公元前1045年，北京成为蓟、燕等诸侯国的都城。公元938年以来，北京先后成为辽陪都、金中都、元大都、明清国都。1949年10月1日成为中华人民共和国首都。
+                        </p>
+                        <!--背景色 第一张-->
+                        <div class="bg_color">
+                            <img src="__PUBLIC__/pc/images/detail/bg_show_photo.png" alt="">
+                            <p class="text_content_bottom">
+                                北京故宫，旧称为紫禁城，位于北京中轴线的中心，是明清两朝代的皇宫，是世界上现存规模最大、保存最为完整的木质结构古建筑。故宫入选世界文化遗产，是全国重点文物保护单位，国家AAAAA级旅游景区。故宫于明成祖朱棣于西园1406年开始建设，明代永乐十八年（1420年）建成，曾有24位皇帝在此住过。被誉为世界五大宫之首（北京故宫、法国凡尔赛宫、英国白金汉宫、美国白宫、俄罗斯克里姆林宫）
+                            </p>
+                        </div>
+                        <!--背景色 第二张-->
+                        <div class="bg_color">
+                            <img src="__PUBLIC__/pc/images/detail/bg_show_photo.png" alt="">
+                            <p class="text_content_bottom">
+                                北京故宫，旧称为紫禁城，位于北京中轴线的中心，是明清两朝代的皇宫，是世界上现存规模最大、保存最为完整的木质结构古建筑。故宫入选世界文化遗产，是全国重点文物保护单位，国家AAAAA级旅游景区。故宫于明成祖朱棣于西园1406年开始建设，明代永乐十八年（1420年）建成，曾有24位皇帝在此住过。被誉为世界五大宫之首（北京故宫、法国凡尔赛宫、英国白金汉宫、美国白宫、俄罗斯克里姆林宫）
+                            </p>
+                        </div>
+                        <!--背景色 第三张-->
+                        <div class="bg_color">
+                            <img src="__PUBLIC__/pc/images/detail/bg_show_photo.png" alt="">
+                            <p class="text_content_bottom">
+                                北京故宫，旧称为紫禁城，位于北京中轴线的中心，是明清两朝代的皇宫，是世界上现存规模最大、保存最为完整的木质结构古建筑。故宫入选世界文化遗产，是全国重点文物保护单位，国家AAAAA级旅游景区。故宫于明成祖朱棣于西园1406年开始建设，明代永乐十八年（1420年）建成，曾有24位皇帝在此住过。被誉为世界五大宫之首（北京故宫、法国凡尔赛宫、英国白金汉宫、美国白宫、俄罗斯克里姆林宫）
+                            </p>
+                        </div>
+                        <!--背景色 第四张-->
+                        <div class="bg_color">
+                            <img src="__PUBLIC__/pc/images/detail/bg_show_photo.png" alt="">
+                            <p class="text_content_bottom">
+                                北京故宫，旧称为紫禁城，位于北京中轴线的中心，是明清两朝代的皇宫，是世界上现存规模最大、保存最为完整的木质结构古建筑。故宫入选世界文化遗产，是全国重点文物保护单位，国家AAAAA级旅游景区。故宫于明成祖朱棣于西园1406年开始建设，明代永乐十八年（1420年）建成，曾有24位皇帝在此住过。被誉为世界五大宫之首（北京故宫、法国凡尔赛宫、英国白金汉宫、美国白宫、俄罗斯克里姆林宫）
+                            </p>
+                        </div>
+                        <!--背景色 第五张-->
+                        <div class="bg_color">
+                            <img src="__PUBLIC__/pc/images/detail/bg_show_photo.png" alt="">
+                            <p class="text_content_bottom">
+                                北京故宫，旧称为紫禁城，位于北京中轴线的中心，是明清两朝代的皇宫，是世界上现存规模最大、保存最为完整的木质结构古建筑。故宫入选世界文化遗产，是全国重点文物保护单位，国家AAAAA级旅游景区。故宫于明成祖朱棣于西园1406年开始建设，明代永乐十八年（1420年）建成，曾有24位皇帝在此住过。被誉为世界五大宫之首（北京故宫、法国凡尔赛宫、英国白金汉宫、美国白宫、俄罗斯克里姆林宫）
+                            </p>
+                        </div>
+                    </div>
+                    <!--留言板-->
+                    <div id="message_detail">
+                        <p class="text_color"><b></b><span>留言</span></p>
+                        <!--文本域-->
+                        <form id="message" action="#" method="POST" enctype="multipart/form-data">
+                            <textarea></textarea>
+                            <input type="submit" value="发布留言"id="message_submit">
+                        </form>
+                    </div>
+                    <!--游客评价-->
+                    <div id="evaluate_detail">
+                        <p class="text_color"><b></b><span>游客评价</span></p>
+                        <div class="evaluate_detail_height">
+                            <!--评星-->
+                            <div class="score">
+                                活动评分：
+                                <div><img src="__PUBLIC__/pc/images/detail/bg_star_full.png" alt=""></div>
+                                <div><img src="__PUBLIC__/pc/images/detail/bg_star_full.png" alt=""></div>
+                                <div><img src="__PUBLIC__/pc/images/detail/bg_star_full.png" alt=""></div>
+                                <div><img src="__PUBLIC__/pc/images/detail/bg_star_full.png" alt=""></div>
+                                <div><img src="__PUBLIC__/pc/images/detail/bg_star_full.png" alt=""></div>
+
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <div class="evaluate_text">
+                                <p class="head_portrait"><img src="__PUBLIC__/pc/images/detail/head_portrait.png" alt=""></p>
+                                <p class="evaluate_content">距离稍远，但酒店服务和餐饮很不错，服务人员很热情周到，温泉在酒店内部，私密性可以</p>
+                            </div>
+                            <!--所有评论-->
+                            <div class="all_evaluate">
+                                <a href="#">更多评论 <img src="__PUBLIC__/pc/images/detail/xq.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container_right">
+                   <p>其他推荐</p>
+                    <!--图片-->
+                    <!--第一张-->
+                    <div class="hot">
+                        <ul>
+                            <li><a href="#"><img src="__PUBLIC__/pc/images/imgs/photoright.png"/></a></li>
+                            <li><a href="#" class="hot_well">【温泉度假之旅】住2晚广州都喜泰丽温泉度假酒店、丰富自助……</a></li>
+                        </ul>
+                    </div>
+                    <!--第二张-->
+                    <div class="hot">
+                        <ul>
+                            <li><a href="#"><img src="__PUBLIC__/pc/images/imgs/photoright.png"/></a></li>
+                            <li><a href="#" class="hot_well">【温泉度假之旅】住2晚广州都喜泰丽温泉度假酒店、丰富自助……</a></li>
+                        </ul>
+                    </div>
+                    <!--第三张-->
+                    <div class="hot">
+                        <ul>
+                            <li><a href="#"><img src="__PUBLIC__/pc/images/imgs/photoright.png"/></a></li>
+                            <li><a href="#" class="hot_well">【温泉度假之旅】住2晚广州都喜泰丽温泉度假酒店、丰富自助……</a></li>
+                        </ul>
+                    </div>
+                    <!--第四张-->
+                    <div class="hot">
+                        <ul>
+                            <li><a href="#"><img src="__PUBLIC__/pc/images/imgs/photoright.png"/></a></li>
+                            <li><a href="#" class="hot_well">【温泉度假之旅】住2晚广州都喜泰丽温泉度假酒店、丰富自助……</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--页脚
+    <div id="footer"></div> -->
+    <script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=iNRD8iIAjCuobjHgg72ukB5ghbKpsaj4"></script>
+    <script src="__PUBLIC__/pc/js/index.js"></script>
+    <script src="__PUBLIC__/pc/js/add.js"></script>
+    <script src="__PUBLIC__/pc/js/detail.js"></script>
+    <script src="__PUBLIC__/pc/js/detailAll.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+        $(function(){
+            $(".btn_add").click(function(){
+                var t=$(this).parent().find('input[class*=add_num]');
+                t.val(parseInt(t.val())+1)
+            });
+            $(".btn_reduce").click(function(){
+                var t=$(this).parent().find('input[class*=add_num]');
+                t.val(parseInt(t.val())-1)
+                if(parseInt(t.val())<1){
+                    t.val(1);
+                }
+            })
+        });
+    </script>
+</body>
+</html>

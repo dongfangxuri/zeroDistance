@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>零距离童军-修改密码</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/myhomepage.css">
+    <style>
+        #changePwd{
+            width: 1200px;
+            min-height: 500px;
+            margin: 0 auto;
+            margin-bottom: 100px;
+        }
+        .PwdFrame{
+            height: 516px;
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 25px;
+            background: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        .pwdVessel{
+            margin: 100px 0 0 50px;
+            font-size: 18px;
+        }
+        .pwdVessel li{
+            line-height: 60px;
+        }
+        .pwdVessel li span b{
+            color: red;
+            margin-right: 3px;
+        }
+        .pwdVessel input{
+            border:1px solid#ddd;
+            height: 36px;
+            width: 260px;
+            border-radius: 5px;
+        }
+        #btnPwd{
+            height: 30px;
+            width: 100px;
+            color: #fff;
+            background: #4B801A;
+            border:none;
+            font-size: 16px;
+            font-weight:bold;
+            position: absolute;
+            left: 198px;
+            bottom: 150px;
+            -webkit-border-radius:3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+        }
+    </style>
+</head>
+<body>
+<header class="headerBox">
+    <div class="top_box">
+        <!-- 页头左侧部分
+        <ul class="city lt">
+            <li>所在城市：</li>
+            <li ><a href="#" class="current_city">南通</a></li>
+            <li><a href="#"><img src="__PUBLIC__/pc/images/head/position.png" /></a></li>
+        </ul>-->
+       <!-- 页头 右侧部分-->
+       <p class="rt">
+           <a href="/Home/Min/userexit">退出</a>
+       </p>
+    </div>
+    <!--logo-->
+    <div class="logo_box">
+        <div class="Subtab">
+            <a href="index.html" class="lt"><img src="__PUBLIC__/pc/images/logo.png" alt=""></a>
+            <!--控制台-->
+            <div class="console">
+                <!---->
+                <ul class="lt">
+                    <li><a href="/Home/Index/index">首页</a></li>
+                    <li class="user_set">
+                        <a>账户设置</a>
+                        <ul class="drop_down">
+                             <li><a href="/Home/Min/set">修改设置</a></li>
+                            <li><a href="/Home/Min/changePwd">修改密码</a></li>
+                        </ul>
+                    </li>
+                    <li class="message"><a href="/Home/Message/index">消息 <span>{$messagecount}</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ </header>
+<section id="changePwd">
+    <div class="PwdFrame">
+        <form action="__SELF__" method="post">
+            <ul class="pwdVessel">
+                <li><span><b>*</b>修改密码</span>：<input type="password" name="password1" id="xgPwd"></li>
+                <li><span><b>*</b>确认密码</span>：<input type="password" name="password2" id="rePwd"></li>
+            </ul>
+            <button id="btnPwd">提交</button>
+        </form>
+    </div>
+</section>
+<!--页脚-->
+<footer id="footer">
+    <div class="foot">
+        <!-- 二维码-->
+        <img src="/Public/pc/images/foot/Qr-code.png" alt=""/>
+        <!-- 咨询热线-->
+        <span>咨询热线：{$aboutmodel.service}</span>
+        <!-- 备案号-->
+        <p>{$aboutmodel.right}</p>
+    </div>
+</footer>
+<script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#footer").load("footer.html");
+    });
+
+
+    $(".user_set").on("mouseover",function(){
+        $(".drop_down").show();
+    }).on("mouseout",function(){
+        $(".drop_down").hide();
+    });
+
+</script>
+</body>
+</html>

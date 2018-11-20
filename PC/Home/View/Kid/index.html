@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <title>亲子网站</title>
+    <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="__PUBLIC__/css/public.css">
+    <style type="text/css">
+        #main{background: #f7f7f7;}
+        header{background: #fff;}
+        .nav p{font-size: 20px;color: #fe7e97;text-align: center;height: 44px;line-height: 44px;}
+        /*添加a的样式*/
+        .nav_compile{
+            float:right;
+            height: 44px;
+            width: 42px;
+            margin-right:25px;
+            color: #5C5C5C;
+        }
+        .nav {position: relative;}
+        .back{max-width:16px;height: 22px;text-decoration: none;display: inline-block;position: absolute;top: 10px;left: 5%;}
+        .back img{height: 100%;}
+        .pad30{padding: 0 0.75rem;}
+        .kid-info{height: 5rem; overflow: hidden; display: -webkit-flex;}
+        .kid-info .lf{position: relative;align-self:center;}
+        .kid-info .lf img{width: 70px;height: 70px;}
+        .kid-info .lf input{width: 70px;height: 70px; opacity: 0; position: absolute;top: 0;left: 0;}
+        .kid-info .rt{flex: 1;align-self:center; }
+        .kid-info .rt{font-size: 15px;margin-left: 1rem; color: #595959;}
+        #school,#name{width: 65px;border: none; background: #f7f7f7;border-radius: 0;margin-right: 20px;}
+        #school{width: 150px;}
+        .rongyu{height: 1.5rem; line-height: 1.5rem; background: #18D1F9;font-size: 18px; color: #fff;}
+        .rongyu img{width: 18px;margin-right: 10px;}
+        .rongyu_detail p{font-size:15px;color: #595959; background: #fff; overflow: hidden;height: 1.8rem; line-height: 1.8rem; }
+        .rongyu_detail p a{color:#167be0; }
+        .rongyu_detail li{height: 50px;font-size: 18px; line-height: 50px;border-bottom: 2px solid #fff;}
+        .rongyu_detail li a{color: #ff8800; display: block; width: 100%;height: 100%;}
+        .rongyu_detail li a img{width: 40px;margin-right: 15px;}
+        .rongyu_detail li a i{float: right; width: 9px;}
+        .kid-info  .baocun{color: #167be0; }
+        .amend{float: right;font-size: 18px; color:#595959;}
+        /*添加*/
+        .add{
+            width:100%;
+            height: 72px;
+            padding: 5px 0;
+            background: #fff;
+            position: absolute;
+        }
+        #add{
+            position: relative;
+            left: 45%;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="__PUBLIC__/js/html5shiv.min.js"></script>
+    <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="main">
+    <header>
+        <div class="nav">
+            <!-- <a href="javascript:history.back(-1)" class="back"><img src="__PUBLIC__/images/back.png"></a>-->
+            <p>成长档案</p>
+        </div>
+    </header>
+    <div class="kid ">
+        <div class="banner">
+            <img src="__PUBLIC__/images/bg_grow_up_banner@2x.png">
+        </div>
+
+
+        <div class="kid-info pad30">
+            <div class="lf"><img src="__PUBLIC__/images/fenlei-r.png"><input type="file" name=""></div>
+            <div class="rt">
+                <form>
+                    <label for="name">姓名:</label>
+                    <input type="text" name="name" id="name" placeholder="{$user.name}" disabled="disabled"  >
+                    <label for="sex">性别:</label>
+                    <input type="text" name="name" id="name" placeholder="{$user.sex}" disabled="disabled"  >
+
+                    <div>
+                        <label for="school" >学校:</label>
+                        <input type="text" placeholder="{$user.addr}" name="school" id="school" disabled="disabled" >
+
+                    </div>
+                    <a href="{:U('Kid/info_edit')}" class="amend">修改</a>
+                </form>
+
+            </div>
+        </div>
+        <!--我的荣誉-->
+        <div class="rongyu pad30">
+            <img src="__PUBLIC__/images/icon_honor_grow_up@2x.png">我的荣誉
+        </div>
+        <div class="rongyu_detail ">
+            <p class="pad30">童军级别：预备童军</p>
+            <p class="pad30">徽章个数：2个 <a href="honor.html" class="rt">了解详情</a></p>
+        </div>
+        <!--夏令营-->
+        <div class="summer" >
+
+            <foreach name="list" item="vo">
+            <p ><a href="{:U('Kid/kid_grow',array('id'=>$vo['id']))}" ><img style="width:90px;height:70px;border:0px solid;border-radius:70px;" src="__ROOT__/{$vo.pic_path}" alt=""><span>{$vo.title}</span><img src="__PUBLIC__/images/right.png" alt=""></a></p>
+            </foreach>
+            <!--<p ><a href="{:U('Kid/kid_grow')}"><img src="__PUBLIC__/images/icon_badges_of_honor_2@2x.png" alt=""><span>千岛湖荒岛生存夏令营</span><img src="__PUBLIC__/images/right.png" alt=""></a></p>-->
+            <b></b>
+        </div>
+		
+		
+		<foreach name="kid_list" item="vo">
+		    <div class="kid-info pad30">
+            <div class="lf"><img src="__ROOT__/{$vo.header_img}"><input type="file" name=""></div>
+            <div class="rt">
+                <form>
+                    <label for="name">姓名:</label>
+                    <input type="text" name="name" id="name" placeholder="{$vo.name}" disabled="disabled"  >
+                    <label for="sex">性别:</label>
+                    <input type="text" name="name" id="name" placeholder="{$vo.sex}" disabled="disabled"  >
+
+                    <div>
+                        <label for="school" >学校:</label>
+                        <input type="text" placeholder="{$vo.addr}" name="school" id="school" disabled="disabled" >
+                    </div>
+                    <a href="{:U('Kid/info_edit2',array('kid_id'=>$vo['id']))}" class="amend">修改</a>
+                </form>
+            </div>
+        </div>
+		</foreach>
+		
+		
+		
+
+        <div class="add">
+            <a href="{:U('Kid/info_add')}"><img src="__PUBLIC__/images/add.jpg" alt="" id="add"></a>
+        </div>
+        <div style="height:51px; width:100%; "></div>
+    </div>
+</div>

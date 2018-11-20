@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>积分</title>
+    <meta charset="utf-8"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no,maximum-scale=1.0">
+    <link rel="stylesheet" href="__PUBLIC__/pintuer/pintuer.css">
+    <style>
+
+        h1.text-white{
+            font-size: 2.4rem;
+        }
+        .totalPoints{
+            margin: 0;
+            font-size: 2.4rem;
+            line-height:5.2rem;
+        }
+        .totalPoints img{
+            width:10%;
+            display: inline-block;
+            margin-left: 20%;
+
+        }
+        .text-color{
+            color:#FD4F64;
+        }
+        .share{
+            font-size: 2.6rem;
+            padding-left: 6%;
+            color: #222;
+        }
+        .friend{
+            list-style: none;
+            font-size: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+        .integral{
+            font-size: 2rem;
+            line-height: 2.6rem;
+            color: #000;
+            margin-bottom: 5rem;
+        }
+        .way{
+            font-size: 2rem;
+        }
+        .wx_friend{
+            margin:0 1.2rem 0 2.6rem;
+
+            width:7.5rem;
+            height: 8.7rem;
+            background: url(__PUBLIC__/images/share.png)no-repeat 5% 50%;
+        }
+        .friend_circle{
+            margin:0 1.2rem 0 2.6rem;
+            margin-top: 0;
+            width:7.5rem;
+            height: 8.7rem;
+            background: url(__PUBLIC__/images/share.png)no-repeat 34% 50%;
+        }
+        .Qzone{
+            margin:0 1.2rem 0 2.6rem;
+
+            width:7.5rem;
+            height: 8.7rem;
+            background: url(__PUBLIC__/images/share.png)no-repeat 34% 12%;
+        }
+        .QQ_friend{
+            margin:0 1.2rem 0 2.6rem;
+            width:7.5rem;
+            height: 8.7rem;
+            background: url(__PUBLIC__/images/share.png)no-repeat 4% 11%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div  class="line text-center padding-big " style="background: #FC9A03">
+            <div class="x1">
+                <a href="javascript:history.back(-1);"><img src="__PUBLIC__/images/ht.png" alt="" class="img-responsive margin-big-left"style="width: 50%"></a>
+            </div>
+            <div class="x11 ">
+                <h1 class="text-white">我的积分</h1>
+            </div>
+        </div>
+      <p class="clearfix totalPoints">
+          <!--图片-->
+          <img src="__PUBLIC__/images/logo.png" alt="" class="img-responsive">
+                当前积分 <span class="text-color">{$model.star}分</span>
+      </p>
+        <div class="text-center">
+           <span class="share border-bottom x12 padding text-left ">积分规则</span>
+            <ul class="friend">
+                <li>微信好友，群：10积分</li>
+                <li>Q Q好友，群：10积分</li>
+                <li>微信圈：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30积分</li>
+                <li>Q Q空间：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30积分</li>
+            </ul>
+            <p class="integral">每天最高可获得300积分<br>积分可抵消活动费用</p>
+        </div>
+        <div class="margin-big-top clearfix">
+            <p class="x3 border-bottom margin-top"></p>
+            <p class="x6 way text-center height-large">通过以下方式进行分享</p>
+            <p class="x3 border-bottom margin-top" ></p>
+        </div>
+        <div class="line  text-center friend_list sns-share">
+            <a href="#" class="x3 wx_friend"></a>
+            <a href="#" class="x3 friend_circle"></a>
+            <a href="__CONTROLLER__/zoneshare" id="zone" class="x3 Qzone" onclick="return zoneshare();"></a>
+            <a href="__CONTROLLER__/qqfriend" class="x3 QQ_friend qq"></a>
+        </div>
+    </div>
+<script src="__PUBLIC__/pintuer/jquery.js"></script>
+<script src="__PUBLIC__/js/jquery.qrcode.min.js"></script>
+<script src="__PUBLIC__/js/share.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+ <script>
+ wx.config({
+   debug:  false,  //调式模式，设置为ture后会直接在网页上弹出调试信息，用于排查问题
+   appId: '<?php echo $signPackage["appId"];?>',
+   timestamp: <?php echo $signPackage["timestamp"];?>,
+   nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+   signature: '<?php echo $signPackage["signature"];?>',
+   jsApiList: [  //需要使用的网页服务接口
+       'checkJsApi',  //判断当前客户端版本是否支持指定JS接口
+       'onMenuShareTimeline', //分享给好友
+       'onMenuShareAppMessage', //分享到朋友圈
+       'onMenuShareQQ',  //分享到QQ
+       'onMenuShareQZone',//分享到qq空间
+       'onMenuShareWeibo' //分享到微博
+   ]
+ });
+ wx.ready(function () {   
+ //ready函数用于调用API，如果你的网页在加载后就需要自定义分享和回调功能，需要在此调用分享函数。
+ //如果是微信游戏结束后，需要点击按钮触发得到分值后分享，这里就不需要调用API了，可以在按钮上绑定事件直接调用。因此，微信游戏由于大多需要用户先触发获取分值，此处请不要填写如下所示的分享API
+	wx.onMenuShareTimeline({  //例如分享到朋友圈的API  
+	   title: '零距离童军', // 分享标题
+	   link: '', // 分享链接
+	   imgUrl: '', // 分享图标
+	   success: function () {
+		   alert('分享成功');
+	   },
+	   cancel: function () {
+		   alert('分享失败');// 用户取消分享后执行的回调函数
+	   }
+	});
+});	
+wx.error(function (res) {
+ alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+<script src="__PUBLIC__/pintuer/pintuer.js"></script>
+</body>
+</html>

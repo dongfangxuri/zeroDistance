@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>亲子网站</title>
+<link href="__PUBLIC__/pc/css/datepicker.css" rel="stylesheet" />
+	<link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+	<link rel="stylesheet" href="__PUBLIC__/pc/css/start.css">
+	 <link rel="stylesheet" href="__PUBLIC__/css/page.css">
+	<script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+	<script src="__PUBLIC__/js/PCzlDate.js"></script>
+</head>
+<body>
+
+<!--页头-->
+<div id="header"></div>
+<!--页面主体-->
+<section  id="start_main">
+
+	<!-- 首页-->
+	<div class="home">
+		<div><a href="/Home/Index"><span>首页 </span></a>&gt;</div>
+		<div><a href="/Home/Rili">活动日历</a></div>
+	</div>
+	<!-- 搜索框-->
+	<form action="__CONTROLLER__/search" class="myForm" method="post">
+		<input type="search" name="keyword" placeholder="城市/景点/酒店" class="search_box"/>
+		<input type="submit" class="search-icon" value="">
+	</form>
+	<div id="cal" style="width: 100%; min-height: 435px;padding-right: 1px; position: relative;">
+		<!--日历-->
+	</div>
+	<!-- 参团进行中详情-->
+	 <div class="group_list">
+		<div class="group_list_left">
+		<foreach name="list" item="vo">
+			<!--第一行-->
+			<div class="details">
+				<!--进行详情--> 
+				<div class="aside_left">
+					<ul class="left">
+						<li>
+						<if condition="$vo.status eq 0">
+						  <span>报名中</span>
+						<else/>
+						   <span>报名截止</span>
+						</if>
+						</li>
+						<li>已有<b>{$vo.count}</b>人报名</li>
+					</ul>
+					<div class="boxBottom">
+						<a href="#"><img src="/{$vo.ac_img}" alt=""/></a>
+						<div class="half-mask">
+							<ul class="Left">
+								<li>{$vo.lable}</li>
+								<li>|</li>
+								<li>{$vo.view_addr}</li>
+								<li>|</li>
+								<li>{$vo.fit_age}岁</li>
+								<p>{$vo.content}
+								</p>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="aside_right">
+					<div class="rigthTxt">
+						<p>{$vo.ac_title}</p>
+						<ul class="left">
+							<li>{$vo.time}天</li>
+							<li>|</li>
+							<li>{$vo.fit_age}岁</li>
+							<li>|</li>
+							<li>{$vo.during}月出游</li>
+						</ul>
+						<div>￥<span>{$vo.single_price}</span>元起/人</div>
+						<a href="/Home/Active/index/ac_id/{$vo.ac_id}">查看详情</a>
+					</div>
+				</div>
+			</div>
+			</foreach>
+		
+		</div>
+		<div class="pages" style="height: 80px">    
+　　                           {$page}
+        </div>
+		<!--热点项目-->
+				
+	 		<div class="group_list_right">
+				<p>热点推荐</p>
+				<foreach name="re_list" item="vo">
+					<div class="hot">
+						<ul>
+							<li><a href="/Home/Active/index/ac_id/{$vo.ac_id}"><img src="/{$vo.ac_img}"/></a></li>
+							<li><a href="/Home/Active/index/ac_id/{$vo.ac_id}" class="hot_well">{$vo.ac_title}</a></li>
+						</ul>
+					</div>
+				</foreach>
+			</div> 
+		
+	</div> 
+</section>
+<div id="footer" ></div>
+<script>
+	function AjaxTime(){
+		$.get("__CONTROLLER__/test",function(data) {
+			pickerEvent.setPriceArr(eval("("+data+")"));
+			pickerEvent.Init("cal");
+		});
+	}
+	AjaxTime();
+
+</script>
+<script>
+	$(document).ready(function() {
+		//$("#header").load("header.html");
+		//$("#footer").load("footer.html");
+	});
+
+</script>
+</body>
+</html>

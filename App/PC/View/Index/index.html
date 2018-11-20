@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>亲子旅游</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+
+</head>
+<body>
+    <!--页头-->
+    <div id="header"></div>
+    <!--页面主体-->
+    <section  id="main">
+        <div id="main_content">
+            <!--搜索框-->
+            <div class="main_search">
+                <form action="#">
+                    <input type="search" placeholder="请输入搜索关键字" id="search"/>
+                    <a href="#"><img src="__PUBLIC__/pc/images/search/search-icon.png" class="search-icon"/></a>
+                </form>
+            </div>
+        </div>
+        <div id="total">
+            <!-- 左侧部分-->
+            <div class="leftAside">
+                <!-- 亲子游历-->
+                <div class="lt">
+                    <ul class="Journey">
+                        <li class="sunJourney">
+                            <a href="#"><span class="bold">亲子游历</span></a>
+                            <a href="#">一日游</a>
+                            <a href="#">两日游</a>
+                            <a href="#"><img src="__PUBLIC__/pc/images/banner/arrow.png" alt=""/></a>
+                        </li>
+                        <!-- 冬夏令营-->
+                        <li class="camps">
+                            <a href="#"><span class="bold">冬夏令营</span></a>
+                            <a href="#">冬令营</a>
+                            <a href="#">夏令营</a>
+                            <a href="#"><img src="__PUBLIC__/pc/images/banner/arrow.png" alt=""/></a>
+                        </li>
+                        <hr class="line"/>
+                        <li class="sunJourney">
+                            <a href="#"><span class="bold">童军学院</span></a>
+                            <a href="#">生存挑战</a>
+                            <a href="#">露营</a>
+                            <a href="#"><img src="__PUBLIC__/pc/images/banner/arrow.png" alt=""/></a>
+                        </li>
+                        <!-- 亲子酒店-->
+                        <li class="Hotel">
+                            <a href="#"><span class="bold">亲子酒店</span></a>
+                            <a href="#">泰州</a>
+                            <a href="#">启东</a>
+                            <a href="#">上海</a>
+                            <a href="#"><img src="__PUBLIC__/pc/images/banner/arrow.png" alt=""/></a>
+                        </li>
+                        <hr class="line"/>
+                        <!-- 景点门票-->
+                        <li class="admission_ticket">
+                            <a href="#"><span class="bold">景点门票</span></a>
+                            <a href="#">扬州</a>
+                            <a href="#">南通</a>
+                            <a href="#">上海</a>
+                            <a href="#"><img src="__PUBLIC__/pc/images/banner/arrow.png" alt=""/></a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- 中间轮播部分-->
+                <!--广告轮播-->
+                <div id="slider" class="lt">
+                    <ul id="imgs">
+                    </ul>
+                    <ul id="indexs">
+                    </ul>
+                </div>
+                <!-- 右侧部分-->
+                <div class="rightAside">
+                    <div class="topAside">
+                        <!-- 生日派对定制-->
+                        <img src="__PUBLIC__/pc/images/banner/banner-ringt1.png" />
+                        <div class="topText">
+                            <div > <a href="__CONTROLLER__/mentality" class="birthday">生日派对定制</a></div>
+                            <div><a href="__CONTROLLER__/mentality">零距离童军更懂<br>孩子</a></div>
+                        </div>
+
+                    </div>
+                    <hr class="line1"/>
+                    <!-- 儿童心理零距离-->
+                    <div class="bottomAside">
+                        <!-- 生日派对定制-->
+                        <img src="__PUBLIC__/pc/images/banner/banner-right2.png" />
+                        <div class="bottomText">
+                            <div > <a href="__CONTROLLER__/mentality" class="Children_psychology">儿童心理零距离</a></div>
+                            <div><a href="__CONTROLLER__/mentality">心理分析及案例</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 零距离头条-->
+        <div id="topLine">
+            <span>零距离头条：</span>10.1长假百元玩过瘾!
+        </div>
+        <!-- 亲子游学-->
+        <div class="pc">
+            <!-- 大背景图-->
+            <img src="__PUBLIC__/pc/images/main/background-1.png" class="bc1"/>
+            <!-- 更多点击这里-->
+            <a href="#"><img src="__PUBLIC__/pc/images/main/border-1.png" class="more"/></a>
+            <!-- 第一张景点图-->
+            <div class="box">
+
+                <foreach name="list" item="vo">
+                    <div class="box1">
+                        <ul class="box_head">
+                            <li class="Num">已有<span>{$vo.partake_num}</span>人报名</li>
+                            <li class="price"><a href="#" >￥{$vo.single_price}元起</a></li>
+                        </ul>
+                        <div class="box_middle">
+                            <a href="{:U('Index/detail',array('id'=>$vo['ac_id']))}"><img src="__ROOT__/{$vo.ac_img}" alt="" style="width: 300px; height:156px;"/></a>
+                            <ul class="Left">
+                                <li><a href="#">{$vo.lable}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.single_price}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                            </ul>
+                        </div>
+                        <div class="box_bottom">
+                            <p>{$vo.ac_title}</p>
+                            <ul class="left">
+                                <li><a href="#">{$vo.dates}天{$vo.ye}晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </foreach>
+
+<!--
+
+                <foreach name="list" item="vo">
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-4.png" alt="" style="width: 300px; height:156px;"/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+</foreach>
+<!--
+<foreach name="list" item="vo">
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>{$vo.partake_num}</span>人报名</li>
+                        <li class="price"><a href="#" >￥{vo.single_price}元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__ROOT__/{$vo.ac_img}" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">{$vo.lable}</a></li>
+                            <li>|</li>
+                            <li><a href="#">{$vo.single_price}</a></li>
+                            <li>|</li>
+                            <li><a href="#">{$vo.fit_age}</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>{$vo.ac_title}</p>
+                        <ul class="left">
+                            <li><a href="#">{$vo.dates}天{$vo.ye}晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">{$vo.fit_age}</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+</foreach>
+                <!--
+                                <!-- 第二张景点图-->
+                <!--
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-4.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-2.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-5.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-3.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-6.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+        <!-- 冬夏令营-->
+        <div class="pc">
+            <!-- 大背景图-->
+            <img src="__PUBLIC__/pc/images/main/background-2.png" class="bc1"/>
+            <!-- 更多点击这里-->
+            <a href="#"><img src="__PUBLIC__/pc/images/main/border-1.png" class="more"/></a>
+            <!-- 第一张景点图-->
+            <div class="box">
+
+                <foreach name="list3" item="vo">
+                    <div class="box1">
+                        <ul class="box_head">
+                            <li class="Num">已有<span>{$vo.partake_num}</span>人报名</li>
+                            <li class="price"><a href="#" >￥{$vo.single_price}元起</a></li>
+                        </ul>
+                        <div class="box_middle">
+                            <a href="{:U('Index/detail',array('id'=>$vo['ac_id']))}"><img src="__ROOT__/{$vo.ac_img}" alt="" style="width: 300px; height:156px;"/></a>
+                            <ul class="Left">
+                                <li><a href="#">{$vo.lable}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.single_price}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                            </ul>
+                        </div>
+                        <div class="box_bottom">
+                            <p>{$vo.ac_title}</p>
+                            <ul class="left">
+                                <li><a href="#">{$vo.dates}天{$vo.ye}晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </foreach>
+
+                <!--
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/pictuer-1.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-4.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-2.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-5.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-3.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-6.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+        <!-- 童军学院-->
+        <div class="pc">
+            <!-- 大背景图-->
+            <img src="__PUBLIC__/pc/images/main/background-3.png" class="bc1"/>
+            <!-- 更多点击这里-->
+            <a href="#"><img src="__PUBLIC__/pc/images/main/border-1.png" class="more"/></a>
+            <!-- 第一张景点图-->
+            <div class="box">
+
+                <foreach name="list5" item="vo">
+                    <div class="box1">
+                        <ul class="box_head">
+                            <li class="Num">已有<span>{$vo.partake_num}</span>人报名</li>
+                            <li class="price"><a href="#" >￥{$vo.single_price}元起</a></li>
+                        </ul>
+                        <div class="box_middle">
+                            <a href="{:U('Index/detail',array('id'=>$vo['ac_id']))}"><img src="__ROOT__/{$vo.ac_img}" alt="" style="width: 300px; height:156px;"/></a>
+                            <ul class="Left">
+                                <li><a href="#">{$vo.lable}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.single_price}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                            </ul>
+                        </div>
+                        <div class="box_bottom">
+                            <p>{$vo.ac_title}</p>
+                            <ul class="left">
+                                <li><a href="#">{$vo.dates}天{$vo.ye}晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </foreach>
+                <!--
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/pictuer-1.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-4.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-2.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-5.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-3.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-6.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+        <!-- 亲子酒店-->
+        <div class="pc">
+            <!-- 大背景图-->
+            <img src="__PUBLIC__/pc/images/main/background-4.png" class="bc1"/>
+            <!-- 更多点击这里-->
+            <a href="#"><img src="__PUBLIC__/pc/images/main/border-1.png" class="more"/></a>
+            <!-- 第一张景点图-->
+            <div class="box">
+                <foreach name="list2" item="vo">
+                    <div class="box1">
+                        <ul class="box_head">
+                            <li class="Num">已有<span>{$vo.partake_num}</span>人报名</li>
+                            <li class="price"><a href="#" >￥{$vo.single_price}元起</a></li>
+                        </ul>
+                        <div class="box_middle">
+                            <a href="{:U('Index/detail',array('id'=>$vo['ac_id']))}"><img src="__ROOT__/{$vo.ac_img}" alt="" style="width: 300px; height:156px;"/></a>
+                            <ul class="Left">
+                                <li><a href="#">{$vo.lable}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.single_price}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                            </ul>
+                        </div>
+                        <div class="box_bottom">
+                            <p>{$vo.ac_title}</p>
+                            <ul class="left">
+                                <li><a href="#">{$vo.dates}天{$vo.ye}晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </foreach>
+                <!--
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/pictuer-1.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-4.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-2.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-5.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-3.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-6.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+        <!-- 景点门票-->
+        <div class="pc">
+            <!-- 大背景图-->
+            <img src="__PUBLIC__/pc/images/main/background-5.png" class="bc1"/>
+            <!-- 更多点击这里-->
+            <a href="#"><img src="__PUBLIC__/pc/images/main/border-1.png" class="more"/></a>
+            <!-- 第一张景点图-->
+            <div class="box">
+
+
+                <foreach name="list1" item="vo">
+                    <div class="box1">
+                        <ul class="box_head">
+                            <li class="Num">已有<span>{$vo.partake_num}</span>人报名</li>
+                            <li class="price"><a href="#" >￥{$vo.single_price}元起</a></li>
+                        </ul>
+                        <div class="box_middle">
+                            <a href="{:U('Index/detail',array('id'=>$vo['ac_id']))}"><img src="__ROOT__/{$vo.ac_img}" alt="" style="width: 300px; height:156px;"/></a>
+                            <ul class="Left">
+                                <li><a href="#">{$vo.lable}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.single_price}</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                            </ul>
+                        </div>
+                        <div class="box_bottom">
+                            <p>{$vo.ac_title}</p>
+                            <ul class="left">
+                                <li><a href="#">{$vo.dates}天{$vo.ye}晚</a></li>
+                                <li>|</li>
+                                <li><a href="#">{$vo.fit_age}</a></li>
+                                <li>|</li>
+                                <li><a href="#">1-12月出游</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </foreach>
+<!--
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/pictuer-1.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-4.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-2.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-5.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-3.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box1">
+                    <ul class="box_head">
+                        <li class="Num">已有<span>59</span>人报名</li>
+                        <li class="price"><a href="#" >￥948元起</a></li>
+                    </ul>
+                    <div class="box_middle">
+                        <a href="#"><img src="__PUBLIC__/pc/images/main/picture-6.png" alt=""/></a>
+                        <ul class="Left">
+                            <li><a href="#">手工DIY</a></li>
+                            <li>|</li>
+                            <li><a href="#">上海市</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                        </ul>
+                    </div>
+                    <div class="box_bottom">
+                        <p>南京索菲特钟山高级饭店</p>
+                        <ul class="left">
+                            <li><a href="#">2天1晚</a></li>
+                            <li>|</li>
+                            <li><a href="#">3-12岁</a></li>
+                            <li>|</li>
+                            <li><a href="#">1-12月出游</a></li>
+                        </ul>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+        <!-- 零距离童军-->
+        <div class="main_bottom">
+            <h1>零距离童军</h1>
+            <h3>互联网+教育+亲子体验，将引来孩子教育新时代</h3>
+            <h3>交给孩子终身受用的生存技能和价值观，零距离体验式课堂成教育新趋势</h3>
+            <div class="main_container">
+                <!-- 品牌力-->
+                <div class="brand">
+                    <img src="__PUBLIC__/pc/images/foot/background1.png" alt=""/>
+                    <div class="brandText1">
+                        <h2 class="brandForce">品牌力</h2>
+                    </div>
+                    <div class="brandText2">
+                        <h3>O2O互联网</h3>
+                        <h3>十年教育沉淀</h3>
+                        <h3>飞速卓越发展</h3>
+                    </div>
+                </div>
+                <!-- 互联网+教育-->
+                <div class="internet">
+                    <img src="__PUBLIC__/pc/images/foot/background2.png" alt=""/>
+                    <div class="brandText1">
+                        <h2>互联网+教育</h2>
+                    </div>
+                    <div class="brandText2">
+                        <h3>在线互动交流</h3>
+                        <h3>线下实践成长</h3>
+                        <h3>集团化经营</h3>
+                    </div>
+
+                </div>
+                <!-- 丰富的产品线-->
+                <div class="productLine">
+                    <img src="__PUBLIC__/pc/images/foot/background3.png" alt=""/>
+                    <div class="brandText1">
+                        <h2>丰富的产品线</h2>
+                    </div>
+                    <div class="brandText2">
+                        <h3>自助特色课程</h3>
+                        <h3>融合社会各界</h3>
+                        <h3>覆盖3-16岁孩子</h3>
+                    </div>
+
+                </div>
+                <!-- 全方位支持体系-->
+                <div class="system">
+                    <img src="__PUBLIC__/pc/images/foot/background4.png" alt=""/>
+                    <div class="brandText1">
+                        <h2 class="ComprehensiveSystem">全方位支持体系</h2>
+                    </div>
+                    <div class="brandText2">
+                        <h3>技术平台支持</h3>
+                        <h3>新课程设计支持</h3>
+                        <h3>品牌化运营</h3>
+                        <h3>完善的管理体系</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--页脚-->
+    <div id="footer"></div>
+    <script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=iNRD8iIAjCuobjHgg72ukB5ghbKpsaj4"></script>
+    <script src="__PUBLIC__/pc/js/index.js"></script>
+    <script src="__PUBLIC__/pc/js/slider.js"></script>
+    <script>
+        var imgs = '';
+
+        var imgs=[
+            {"i":0,"img":"http://local.qz.com/public/pc/images/banner/banner-1.png"},
+            {"i":1,"img":"http://local.qz.com/public/pc/images/banner/banner-2.png"},
+            {"i":2,"img":"http://local.qz.com/public/pc/images/banner/banner-3.png"},
+            {"i":3,"img":"http://local.qz.com/public/pc/images/banner/banner-4.png"},
+            {"i":4,"img":"http://local.qz.com/public/pc/images/banner/banner-5.png"},
+        ];
+
+/*
+        $(document).ready(function(){
+
+            //var str = $.ajax({url:"__CONTROLLER__/getImg",async:false});
+
+            $.post("__CONTROLLER__/getImg",function(result){
+                alert(result);
+                imgs = result;
+            });
+
+        });
+*/
+                /*=[
+            {"i":0,"img":"http://local.qz.com/public/pc/images/banner/banner-1.png"},
+            {"i":1,"img":"http://local.qz.com/public/pc/images/banner/banner-2.png"},
+            {"i":2,"img":"http://local.qz.com/public/pc/images/banner/banner-3.png"},
+            {"i":3,"img":"http://local.qz.com/public/pc/images/banner/banner-4.png"},
+            {"i":4,"img":"http://local.qz.com/public/pc/images/banner/banner-5.png"},
+        ];
+        */
+        $(document).ready(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</body>
+</html>

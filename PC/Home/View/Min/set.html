@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>零距离童军-系统设置</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/pc/css/myhomepage.css">
+    <style>
+        #my_setup{width: 1200px;min-height: 500px;margin: 0 auto;margin-bottom: 100px;}
+        .current{height: 516px;width: 500px;margin: 0 auto;margin-top: 25px;background: #fff;overflow: hidden;
+            padding: 25px 0 0 35px;position: relative;}
+        .current a input{
+            position: absolute;
+            top: 26px;
+            left: 42px;
+            padding: 5px;
+            opacity: 0;
+            z-index: 10;
+        }
+        .current a span{
+            position: absolute;
+            top:31px;
+            left: 92px;
+            font-size: 16px;
+        }
+        .current p{
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .current div{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .menu{
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .menu b{
+            color: red;
+            margin-right: 5px;
+        }
+        .menu li{
+           line-height: 40px;
+        }
+        .textContent{
+            width: 250px;
+            height: 30px;
+            border:1px solid #ddd;
+            -webkit-border-radius:3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+        }
+        ._sub{
+            border:none;position: absolute;
+            bottom: 46px;
+            left: 200px;
+            width: 100px;
+            height: 30px;
+            -webkit-border-radius:3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background: #4B801A;
+        }
+        #preview{
+            height: 140px;
+            width: 140px;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 15px;
+            margin-left:120px;
+        }
+    </style>
+</head>
+<body>
+<header class="headerBox">
+    <div class="top_box">
+        <!-- 页头左侧部分
+        <ul class="city lt">
+            <li>所在城市：</li>
+            <li ><a href="#" class="current_city">南通</a></li>
+            <li><a href="#"><img src="__PUBLIC__/pc/images/head/position.png" /></a></li>
+        </ul> -->
+       <!-- 页头右侧部分-->
+       <p class="rt">
+           <a href="/Home/Min/userexit">退出</a>
+       </p>
+    </div>
+    <!--logo-->
+    <div class="logo_box">
+        <div class="Subtab">
+            <a href="index.html" class="lt"><img src="__PUBLIC__/pc/images/logo.png" alt=""></a>
+            <!--控制台-->
+            <div class="console">
+                <!---->
+                <ul class="lt">
+                    <li><a href="/Home/Index/index">首页</a></li>
+                    <li class="user_set">
+                        <a>账户设置</a>
+                        <ul class="drop_down">
+                             <li><a href="__CONTROLLER__/set">修改设置</a></li>
+                            <li><a href="__CONTROLLER__/changePwd">修改密码</a></li>
+                        </ul>
+                    </li>
+                    <li class="message"><a href="message.html">消息 <span>{$messagecount}</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ </header>
+<section id="my_setup">
+    <div class="current">
+        <form action="__SELF__" method="POST" enctype="multipart/form-data">
+            <a href="#"><img src="__PUBLIC__/pc/images/bg_choose_photo_upload.png" alt="">
+             <input type="file" name="head_img" onchange="previewImage(this)"><span>请选择您要上传文件</span></a>
+            <p>预览效果</p>
+            <div id="preview">
+                <img id="imghead"  border=0 src='__PUBLIC__/pc/images/bg_head_photo_show.png' class="preview">
+            </div>
+            <ul class="menu">
+                <li><b>*</b>昵称：<input type="text" value="{$model.nick_name}" name="nickname" class="textContent"></li>
+                <li><b>*</b>性别：
+                    <label>
+                        <label for="male">
+                        <input type="radio" name="sex" value="1"  id="male">&nbsp;男
+                        </label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="female">
+                            <input type="radio" name="sex" value="2" id="female">&nbsp;女
+                        </label>
+                    </label>
+                </li>
+                <li><b>*</b>地区：<input type="text" value="{$model.address}" name="areaname" class="textContent"></li>
+            </ul>
+            <button class="_sub">提交</button>
+        </form>
+    </div>
+</section>
+<footer id="footer">
+    <div class="foot">
+        <!-- 二维码-->
+        <img src="/Public/pc/images/foot/Qr-code.png" alt=""/>
+        <!-- 咨询热线-->
+        <span>咨询热线：{$aboutmodel.service}</span>
+        <!-- 备案号-->
+        <p>{$aboutmodel.right}</p>
+    </div>
+</footer>
+<script src="__PUBLIC__/pc/js/jquery-1.11.3.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#footer").load("footer.html");
+    });
+    //通过IP地址获取城市名称
+    $(".user_set").on("mouseover",function(){
+        $(".drop_down").show();
+    }).on("mouseout",function(){
+        $(".drop_down").hide();
+    });
+
+</script>
+<script type="text/javascript">
+    //图片上传预览    IE是用了滤镜。
+    function previewImage(file){
+        var MAXWIDTH  = 140;
+        var MAXHEIGHT = 140;
+        var div = document.getElementById('preview');
+        if (file.files && file.files[0])
+        {
+            div.innerHTML ='<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+            }
+            var reader = new FileReader();
+            reader.onload = function(evt){img.src = evt.target.result;}
+            reader.readAsDataURL(file.files[0]);
+        }
+        else //兼容IE
+        {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+        }
+    }
+    function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+        var param = {top:0, left:0, width:width, height:height};
+        if( width>maxWidth || height>maxHeight ){
+            rateWidth = width / maxWidth;
+            rateHeight = height / maxHeight;
+            if( rateWidth > rateHeight ){
+                param.width =  maxWidth;
+                param.height = Math.round(height / rateWidth);
+            }else{
+                param.width = Math.round(width / rateHeight);
+                param.height = maxHeight;
+            }
+        }
+        param.left = Math.round((maxWidth - param.width) / 2);
+        param.top = Math.round((maxHeight - param.height) / 2);
+        return param;
+    }
+</script>
+</body>
+</html>
